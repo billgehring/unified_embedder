@@ -1,0 +1,99 @@
+[build-system]
+# setuptools >= 74.1.0 required to build C extensions via pyproject.toml
+requires = ["setuptools >= 74.1.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mmh3"
+version = "5.2.0"
+description = "Python extension for MurmurHash (MurmurHash3), a set of fast and robust hash functions."
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["utility", "hash", "MurmurHash"]
+requires-python = ">=3.9"
+authors = [
+  {name = "Hajime Senuma", email="hajime.senuma@gmail.com"}
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Programming Language :: Python :: Free Threading :: 2 - Beta",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Utilities"
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest == 8.4.1",
+  "pytest-sugar == 1.0.0"
+]
+lint = [
+  "black == 25.1.0",
+  "clang-format == 20.1.8",
+  "isort == 6.0.1",
+  "pylint == 3.3.7"
+]
+type = [
+  "mypy == 1.17.0"
+]
+docs = [
+  "myst-parser == 4.0.1",
+  "shibuya == 2025.7.24",
+  "sphinx == 8.2.3",
+  "sphinx-copybutton == 0.5.2"
+]
+benchmark = [
+  "pymmh3 == 0.0.5",
+  "pyperf == 2.9.0",
+  "xxhash == 3.5.0"
+]
+plot = [
+  "matplotlib == 3.10.3",
+  "pandas == 2.3.1"
+]
+
+[project.urls]
+Homepage = "https://pypi.org/project/mmh3/"
+Repository = "https://github.com/hajimes/mmh3"
+Changelog = "https://github.com/hajimes/mmh3/blob/master/CHANGELOG.md"
+"Bug Tracker" = "https://github.com/hajimes/mmh3/issues"
+
+[tool.isort]
+profile = "black"
+src_paths = ["src/mmh3/__init__.pyi", "util", "tests", "benchmark", "docs"]
+
+[tool.setuptools]
+include-package-data = true
+ext-modules = [
+  {name = "mmh3", sources = ["./src/mmh3/mmh3module.c", "./src/mmh3/murmurhash3.c"]}
+]
+
+[tool.setuptools.package-data]
+mmh3 = ["*.h"]
+
+[tool.pylint]
+ignore-paths = [
+  "^build",
+  "^venv",
+  "^.venv",
+  "^.tox",
+  "^src/mmh3/__init__.pyi"
+]
+# Use multiple processes to speed up Pylint.
+# The value 0 specifies the number of processors to be auto-detected.
+# This setting can be found in the template file of super-linter 7.0.0.
+jobs = 0
+# import-error: An error tricky to resolve, especially on super-linter.
+# wrong-import-order: Respect isort's import order.
+disable = [
+  "import-error",
+  "wrong-import-order"
+]

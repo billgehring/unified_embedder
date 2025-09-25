@@ -1,0 +1,6 @@
+Error in boxClipToRectangle: box outside rectangle
+Error in pixScanForForeground: invalid box
+Error in boxClipToRectangle: box outside rectangle
+Error in pixScanForForeground: invalid box
+Error in boxClipToRectangle: box outside rectangle
+Error in pixScanForForeground: invalid box

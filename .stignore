@@ -1,0 +1,30 @@
+# --- Python build / venv ---
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# --- Packaging / build artifacts ---
+build/
+dist/
+*.egg-info/
+
+# --- OS junk ---
+.DS_Store
+.AppleDouble
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- IDE / editor metadata ---
+.vscode/
+.idea/
+*.swp
+

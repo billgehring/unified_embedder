@@ -1,0 +1,66 @@
+[package]
+name = "data"
+version = "0.14.5"
+edition = "2021"
+
+[lib]
+doctest = false
+
+[[bin]]
+name = "x"
+path = "src/bin/example.rs"
+
+[[bin]]
+name = "xtool"
+path = "src/bin/xtool.rs"
+
+[dependencies]
+cas_client = { path = "../cas_client" }
+cas_object = { path = "../cas_object" }
+cas_types = { path = "../cas_types" }
+deduplication = { path = "../deduplication" }
+error_printer = { path = "../error_printer" }
+mdb_shard = { path = "../mdb_shard" }
+merklehash = { path = "../merklehash" }
+parutils = { path = "../parutils" }
+progress_tracking = { path = "../progress_tracking" }
+utils = { path = "../utils" }
+xet_threadpool = { path = "../xet_threadpool" }
+
+anyhow = { workspace = true }
+async-trait = { workspace = true }
+bytes = { workspace = true }
+chrono = { workspace = true }
+clap = { workspace = true }
+dirs = { workspace = true }
+jsonwebtoken = { workspace = true }
+lazy_static = { workspace = true }
+more-asserts = { workspace = true }
+prometheus = { workspace = true }
+rand = { workspace = true }
+rand_chacha = { workspace = true }
+regex = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tempfile = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["rt-multi-thread", "rt"] }
+tracing = { workspace = true }
+ulid = { workspace = true }
+walkdir = { workspace = true }
+
+# Windows doesn't support assembly for compilation
+[target.'cfg(not(target_os = "windows"))'.dependencies]
+sha2 = { workspace = true, features = ["asm"] }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+sha2 = { workspace = true }
+
+[dev-dependencies]
+serial_test = { workspace = true }
+tracing-test = { workspace = true }
+ctor = { workspace = true }
+
+[features]
+strict = []
+expensive_tests = []

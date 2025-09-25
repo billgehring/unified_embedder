@@ -1,0 +1,99 @@
+before_script:
+  - pip install '.[test]'
+
+test_job_py313:
+  image: python:3.13
+  script:
+    - pytest
+  stage: test
+
+test_job_py312:
+  image: python:3.12
+  script:
+    - pytest
+  stage: test
+
+test_job_py311:
+  image: python:3.11
+  script:
+    - pytest
+  stage: test
+
+test_job_py310:
+  image: python:3.10
+  script:
+    - pytest
+  stage: test
+
+test_job_py39:
+  image: python:3.9
+  script:
+    - pytest
+  stage: test
+
+test_job_py38:
+  image: python:3.8
+  script:
+    - pytest
+  stage: test
+
+test_job_py37:
+  image: python:3.7
+  script:
+    - pytest
+  stage: test
+
+test_job_integration:
+  image: fedora:41
+  before_script:
+    - dnf install -y dbus-daemon python3-pip
+    - pip install '.[test,trio]'
+  script:
+    - dbus-run-session -- pytest
+  stage: test
+
+
+build-job:
+  stage: build
+  image: python:3-bookworm
+  script:
+    - python -m pip install -U build
+    - python -m build
+  artifacts:
+    paths:
+      - "dist/"
+
+generate-pypi-attestations:
+  stage: build
+  rules:
+    - if: $CI_COMMIT_TAG
+  image: python:3-bookworm
+  needs:
+  - job: build-job
+    artifacts: true
+  id_tokens:
+    SIGSTORE_ID_TOKEN:
+      aud: sigstore
+  script:
+    - python -m pip install -U pypi-attestations
+    - python -m pypi_attestations sign dist/*
+  artifacts:
+    paths:
+      - "dist/"
+
+publish-job:
+  stage: deploy
+  rules:
+    - if: $CI_COMMIT_TAG
+  image: python:3-bookworm
+  dependencies:
+    - build-job
+    - generate-pypi-attestations
+  id_tokens:
+    PYPI_ID_TOKEN:
+      aud: pypi
+  script:
+    - python -m pip install -U twine
+    # With no token specified, this should use trusted publishing to
+    # authenticate to PyPI:
+    - twine upload --attestations dist/*

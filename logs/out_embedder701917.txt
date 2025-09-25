@@ -1,0 +1,480 @@
+2025-09-05 11:15:43,041 - INFO - unified_embedder - Logging configured: file='./logs/unified_embedder_20250905_111543.log', level=INFO
+2025-09-05 11:15:43,041 - INFO - unified_embedder - COMMAND LINE: unified_embedder.py --docs_dir /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917 --qdrant --qdrant_collection Psych240_FA2024_701917_ColBERT --qdrant_url http://localhost:6333 --force_ocr --max_files 10 --recreate_index --embedding_model BAAI/bge-large-en-v1.5
+2025-09-05 11:15:46,648 - INFO - ocr_quality_checker - Attempting to load spaCy model: en_core_web_trf
+2025-09-05 11:15:47,705 - INFO - unified_embedder - 🔍 Performing early Qdrant connectivity check...
+2025-09-05 11:15:47,705 - INFO - unified_embedder - Checking connectivity to: http://localhost:6333
+2025-09-05 11:15:47,705 - INFO - unified_embedder - Collection: Psych240_FA2024_701917_ColBERT
+2025-09-05 11:15:47,705 - INFO - unified_embedder - API Key: ey******************************************************************************ceVM
+2025-09-05 11:15:47,705 - INFO - unified_embedder - Checking Qdrant connectivity at http://localhost:6333/health...
+2025-09-05 11:15:47,710 - WARNING - unified_embedder - ⚠️  Endpoint http://localhost:6333/health returned status 404: 
+2025-09-05 11:15:47,710 - INFO - unified_embedder - Checking Qdrant connectivity at http://localhost:6333/...
+2025-09-05 11:15:47,711 - INFO - unified_embedder - ✅ Qdrant server is healthy: {'title': 'qdrant - vector search engine', 'version': '1.15.3', 'commit': 'a7d21f168097494acc2cbfb2489cfd2da40581ac'}
+2025-09-05 11:15:47,713 - INFO - unified_embedder - ✅ Qdrant collections endpoint accessible - found 8 collections
+2025-09-05 11:15:47,714 - INFO - unified_embedder - ✅ Qdrant connectivity check passed! Proceeding with document processing...
+2025-09-05 11:15:47,714 - INFO - unified_embedder - Loading embedding model: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:47,714 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:48,812 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:50,308 - INFO - unified_embedder - Embedding dimension for model BAAI/bge-large-en-v1.5: 1024
+2025-09-05 11:15:50,309 - INFO - unified_embedder - Processing directory: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917
+2025-09-05 11:15:50,309 - INFO - unified_embedder - Scanning directory: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917
+2025-09-05 11:15:50,336 - INFO - unified_embedder - Limiting to 10 files out of 1365 found
+2025-09-05 11:15:50,336 - INFO - unified_embedder - Found 10 files to process (skipped 428 files).
+2025-09-05 11:15:50,336 - INFO - unified_embedder - System has 12 CPU cores and 64.90 GB available memory
+2025-09-05 11:15:50,336 - INFO - unified_embedder - Determined optimal worker count: 11
+2025-09-05 11:15:50,336 - INFO - unified_embedder - Using 11 parallel workers.
+2025-09-05 11:15:50,336 - INFO - unified_embedder - OCR Configuration: force_ocr=True, engine=Tesseract
+2025-09-05 11:15:50,337 - INFO - unified_embedder - Command-line arguments: Namespace(docs_dir='/Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917', embedding_model='BAAI/bge-large-en-v1.5', sparse_embedding_model='prithivida/Splade_PP_en_v1', qdrant_collection='Psych240_FA2024_701917_ColBERT', qdrant_url='http://localhost:6333', qdrant_api_key=None, recreate_index=True, ocr_engine='Tesseract', force_ocr=True, output='embeddings.json', qdrant=True, database='qdrant', use_sparse=True, max_files=10, num_workers=None, max_seq_length=1024, chunk_size=1024, chunk_overlap=128, enable_dedup=False, dedup_threshold=0.95, enable_colbert=False, colbert_model='sentence-transformers/all-MiniLM-L6-v2', debug=False)
+2025-09-05 11:15:50,337 - INFO - unified_embedder - Force OCR setting: True
+2025-09-05 11:15:50,437 - INFO - unified_embedder - Logging configured: file='./logs/unified_embedder_20250905_111550.log', level=INFO
+2025-09-05 11:15:50,437 - INFO - unified_embedder - COMMAND LINE: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/unified_embedder/unified_embedder.py --docs_dir /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917 --qdrant --qdrant_collection Psych240_FA2024_701917_ColBERT --qdrant_url http://localhost:6333 --force_ocr --max_files 10 --recreate_index --embedding_model BAAI/bge-large-en-v1.5
+2025-09-05 11:15:50,441 - INFO - unified_embedder - Logging configured: file='./logs/unified_embedder_20250905_111550.log', level=INFO
+2025-09-05 11:15:50,441 - INFO - unified_embedder - COMMAND LINE: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/unified_embedder/unified_embedder.py --docs_dir /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917 --qdrant --qdrant_collection Psych240_FA2024_701917_ColBERT --qdrant_url http://localhost:6333 --force_ocr --max_files 10 --recreate_index --embedding_model BAAI/bge-large-en-v1.5
+2025-09-05 11:15:50,448 - INFO - unified_embedder - Logging configured: file='./logs/unified_embedder_20250905_111550.log', level=INFO
+2025-09-05 11:15:50,448 - INFO - unified_embedder - COMMAND LINE: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/unified_embedder/unified_embedder.py --docs_dir /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917 --qdrant --qdrant_collection Psych240_FA2024_701917_ColBERT --qdrant_url http://localhost:6333 --force_ocr --max_files 10 --recreate_index --embedding_model BAAI/bge-large-en-v1.5
+2025-09-05 11:15:50,453 - INFO - unified_embedder - Logging configured: file='./logs/unified_embedder_20250905_111550.log', level=INFO
+2025-09-05 11:15:50,453 - INFO - unified_embedder - COMMAND LINE: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/unified_embedder/unified_embedder.py --docs_dir /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917 --qdrant --qdrant_collection Psych240_FA2024_701917_ColBERT --qdrant_url http://localhost:6333 --force_ocr --max_files 10 --recreate_index --embedding_model BAAI/bge-large-en-v1.5
+2025-09-05 11:15:50,461 - INFO - unified_embedder - Logging configured: file='./logs/unified_embedder_20250905_111550.log', level=INFO
+2025-09-05 11:15:50,461 - INFO - unified_embedder - COMMAND LINE: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/unified_embedder/unified_embedder.py --docs_dir /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917 --qdrant --qdrant_collection Psych240_FA2024_701917_ColBERT --qdrant_url http://localhost:6333 --force_ocr --max_files 10 --recreate_index --embedding_model BAAI/bge-large-en-v1.5
+2025-09-05 11:15:50,475 - INFO - unified_embedder - Logging configured: file='./logs/unified_embedder_20250905_111550.log', level=INFO
+2025-09-05 11:15:50,475 - INFO - unified_embedder - COMMAND LINE: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/unified_embedder/unified_embedder.py --docs_dir /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917 --qdrant --qdrant_collection Psych240_FA2024_701917_ColBERT --qdrant_url http://localhost:6333 --force_ocr --max_files 10 --recreate_index --embedding_model BAAI/bge-large-en-v1.5
+2025-09-05 11:15:50,480 - INFO - unified_embedder - Logging configured: file='./logs/unified_embedder_20250905_111550.log', level=INFO
+2025-09-05 11:15:50,480 - INFO - unified_embedder - COMMAND LINE: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/unified_embedder/unified_embedder.py --docs_dir /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917 --qdrant --qdrant_collection Psych240_FA2024_701917_ColBERT --qdrant_url http://localhost:6333 --force_ocr --max_files 10 --recreate_index --embedding_model BAAI/bge-large-en-v1.5
+2025-09-05 11:15:50,490 - INFO - unified_embedder - Logging configured: file='./logs/unified_embedder_20250905_111550.log', level=INFO
+2025-09-05 11:15:50,491 - INFO - unified_embedder - COMMAND LINE: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/unified_embedder/unified_embedder.py --docs_dir /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917 --qdrant --qdrant_collection Psych240_FA2024_701917_ColBERT --qdrant_url http://localhost:6333 --force_ocr --max_files 10 --recreate_index --embedding_model BAAI/bge-large-en-v1.5
+2025-09-05 11:15:50,492 - INFO - unified_embedder - Logging configured: file='./logs/unified_embedder_20250905_111550.log', level=INFO
+2025-09-05 11:15:50,493 - INFO - unified_embedder - COMMAND LINE: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/unified_embedder/unified_embedder.py --docs_dir /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917 --qdrant --qdrant_collection Psych240_FA2024_701917_ColBERT --qdrant_url http://localhost:6333 --force_ocr --max_files 10 --recreate_index --embedding_model BAAI/bge-large-en-v1.5
+2025-09-05 11:15:50,497 - INFO - unified_embedder - Logging configured: file='./logs/unified_embedder_20250905_111550.log', level=INFO
+2025-09-05 11:15:50,497 - INFO - unified_embedder - COMMAND LINE: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/unified_embedder/unified_embedder.py --docs_dir /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917 --qdrant --qdrant_collection Psych240_FA2024_701917_ColBERT --qdrant_url http://localhost:6333 --force_ocr --max_files 10 --recreate_index --embedding_model BAAI/bge-large-en-v1.5
+2025-09-05 11:15:56,223 - INFO - ocr_quality_checker - Attempting to load spaCy model: en_core_web_trf
+2025-09-05 11:15:56,249 - INFO - ocr_quality_checker - Attempting to load spaCy model: en_core_web_trf
+2025-09-05 11:15:56,273 - INFO - ocr_quality_checker - Attempting to load spaCy model: en_core_web_trf
+2025-09-05 11:15:56,293 - INFO - ocr_quality_checker - Attempting to load spaCy model: en_core_web_trf
+2025-09-05 11:15:56,301 - INFO - ocr_quality_checker - Attempting to load spaCy model: en_core_web_trf
+2025-09-05 11:15:56,316 - INFO - ocr_quality_checker - Attempting to load spaCy model: en_core_web_trf
+2025-09-05 11:15:56,359 - INFO - ocr_quality_checker - Attempting to load spaCy model: en_core_web_trf
+2025-09-05 11:15:56,414 - INFO - ocr_quality_checker - Attempting to load spaCy model: en_core_web_trf
+2025-09-05 11:15:56,422 - INFO - ocr_quality_checker - Attempting to load spaCy model: en_core_web_trf
+2025-09-05 11:15:56,430 - INFO - ocr_quality_checker - Attempting to load spaCy model: en_core_web_trf
+2025-09-05 11:15:57,727 - INFO - unified_embedder.subprocess - Subprocess OCR settings for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg_Ground.png: force_ocr=True, engine=Tesseract
+2025-09-05 11:15:57,727 - INFO - unified_embedder.subprocess - Loading model BAAI/bge-large-en-v1.5 for file /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg_Ground.png
+2025-09-05 11:15:57,728 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:57,811 - INFO - unified_embedder.subprocess - Subprocess OCR settings for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg_NorthU.png: force_ocr=True, engine=Tesseract
+2025-09-05 11:15:57,811 - INFO - unified_embedder.subprocess - Loading model BAAI/bge-large-en-v1.5 for file /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg_NorthU.png
+2025-09-05 11:15:57,812 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:57,890 - INFO - unified_embedder.subprocess - Subprocess OCR settings for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg1.JPG: force_ocr=True, engine=Tesseract
+2025-09-05 11:15:57,890 - INFO - unified_embedder.subprocess - Loading model BAAI/bge-large-en-v1.5 for file /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg1.JPG
+2025-09-05 11:15:57,890 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:57,895 - INFO - unified_embedder.subprocess - Subprocess OCR settings for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg2.jpg: force_ocr=True, engine=Tesseract
+2025-09-05 11:15:57,895 - INFO - unified_embedder.subprocess - Loading model BAAI/bge-large-en-v1.5 for file /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg2.jpg
+2025-09-05 11:15:57,895 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:57,896 - INFO - unified_embedder.subprocess - Subprocess OCR settings for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/ruthven.png: force_ocr=True, engine=Tesseract
+2025-09-05 11:15:57,897 - INFO - unified_embedder.subprocess - Loading model BAAI/bge-large-en-v1.5 for file /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/ruthven.png
+2025-09-05 11:15:57,897 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:57,901 - INFO - unified_embedder.subprocess - Subprocess OCR settings for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg_NorthU2.png: force_ocr=True, engine=Tesseract
+2025-09-05 11:15:57,901 - INFO - unified_embedder.subprocess - Loading model BAAI/bge-large-en-v1.5 for file /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg_NorthU2.png
+2025-09-05 11:15:57,902 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:57,932 - INFO - unified_embedder.subprocess - Subprocess OCR settings for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/lecture10_FA24_workingmemory1_full.pptx: force_ocr=True, engine=Tesseract
+2025-09-05 11:15:57,932 - INFO - unified_embedder.subprocess - Loading model BAAI/bge-large-en-v1.5 for file /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/lecture10_FA24_workingmemory1_full.pptx
+2025-09-05 11:15:57,933 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:57,983 - INFO - unified_embedder.subprocess - Subprocess OCR settings for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_11_Implicit_Explicit_Memory.txt: force_ocr=True, engine=Tesseract
+2025-09-05 11:15:57,983 - INFO - unified_embedder.subprocess - Loading model BAAI/bge-large-en-v1.5 for file /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_11_Implicit_Explicit_Memory.txt
+2025-09-05 11:15:57,983 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:57,988 - INFO - unified_embedder.subprocess - Subprocess OCR settings for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt: force_ocr=True, engine=Tesseract
+2025-09-05 11:15:57,988 - INFO - unified_embedder.subprocess - Loading model BAAI/bge-large-en-v1.5 for file /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt
+2025-09-05 11:15:57,989 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:58,006 - INFO - unified_embedder.subprocess - Subprocess OCR settings for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf: force_ocr=True, engine=Tesseract
+2025-09-05 11:15:58,006 - INFO - unified_embedder.subprocess - Loading model BAAI/bge-large-en-v1.5 for file /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf
+2025-09-05 11:15:58,007 - INFO - sentence_transformers.SentenceTransformer - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-09-05 11:15:58,911 - INFO - unified_embedder.subprocess - Embedder test successful, dimension: 1024
+2025-09-05 11:15:58,913 - INFO - unified_embedder - Storing metadata for image file: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg_Ground.png
+2025-09-05 11:15:59,161 - INFO - unified_embedder.subprocess - Embedder test successful, dimension: 1024
+2025-09-05 11:15:59,163 - INFO - unified_embedder - Storing metadata for image file: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg_NorthU2.png
+2025-09-05 11:15:59,209 - INFO - unified_embedder.subprocess - Embedder test successful, dimension: 1024
+2025-09-05 11:15:59,210 - INFO - unified_embedder - Storing metadata for image file: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg1.JPG
+2025-09-05 11:15:59,212 - INFO - unified_embedder.subprocess - Embedder test successful, dimension: 1024
+2025-09-05 11:15:59,212 - INFO - unified_embedder - Storing metadata for image file: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg_NorthU.png
+2025-09-05 11:15:59,223 - INFO - unified_embedder.subprocess - Embedder test successful, dimension: 1024
+2025-09-05 11:15:59,224 - INFO - unified_embedder - Storing metadata for image file: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/ruthven.png
+2025-09-05 11:15:59,230 - INFO - unified_embedder.subprocess - Embedder test successful, dimension: 1024
+2025-09-05 11:15:59,231 - INFO - unified_embedder - Processing /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/lecture10_FA24_workingmemory1_full.pptx using EnhancedDoclingConverter (OCR Engine: Tesseract, Force OCR: True)
+2025-09-05 11:15:59,246 - INFO - unified_embedder.subprocess - Embedder test successful, dimension: 1024
+2025-09-05 11:15:59,247 - INFO - unified_embedder - Storing metadata for image file: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/Kellogg2.jpg
+2025-09-05 11:15:59,251 - INFO - unified_embedder.subprocess - Embedder test successful, dimension: 1024
+2025-09-05 11:15:59,252 - INFO - unified_embedder - Processing /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt using EnhancedDoclingConverter (OCR Engine: Tesseract, Force OCR: True)
+2025-09-05 11:15:59,277 - INFO - unified_embedder.subprocess - Embedder test successful, dimension: 1024
+2025-09-05 11:15:59,278 - INFO - unified_embedder - Processing /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_11_Implicit_Explicit_Memory.txt using EnhancedDoclingConverter (OCR Engine: Tesseract, Force OCR: True)
+2025-09-05 11:15:59,309 - INFO - unified_embedder.subprocess - Embedder test successful, dimension: 1024
+2025-09-05 11:15:59,310 - INFO - unified_embedder.subprocess - PDF file detected: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf, will apply OCR settings: force_ocr=True
+2025-09-05 11:15:59,310 - INFO - unified_embedder - Processing /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf using EnhancedDoclingConverter (OCR Engine: Tesseract, Force OCR: True)
+2025-09-05 11:15:59,418 - INFO - docling.datamodel.document - detected formats: [<InputFormat.PPTX: 'pptx'>]
+2025-09-05 11:15:59,431 - INFO - enhanced_docling_converter - Processing TXT file directly: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt
+2025-09-05 11:15:59,431 - INFO - enhanced_docling_converter - Successfully processed TXT file: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt (39 chars, encoding: utf-8)
+2025-09-05 11:15:59,431 - INFO - enhanced_docling_converter - EnhancedDoclingConverter stats: {'total_processed': 1, 'ocr_checks': 0, 'ocr_retries': 0, 'engines_compared': 0, 'best_engine_counts': {}, 'errors': 0}
+2025-09-05 11:15:59,431 - INFO - unified_embedder - Successfully extracted text (39 chars) and metadata for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt
+2025-09-05 11:15:59,439 - INFO - docling.document_converter - Going to convert document batch...
+2025-09-05 11:15:59,439 - INFO - docling.document_converter - Initializing pipeline for SimplePipeline with options hash fd2563ebd22a77ec496778ef37c0c18c
+2025-09-05 11:15:59,439 - INFO - docling.pipeline.base_pipeline - Processing document lecture10_FA24_workingmemory1_full.pptx
+2025-09-05 11:15:59,468 - INFO - enhanced_docling_converter - Processing TXT file directly: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_11_Implicit_Explicit_Memory.txt
+2025-09-05 11:15:59,468 - INFO - enhanced_docling_converter - Successfully processed TXT file: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_11_Implicit_Explicit_Memory.txt (39 chars, encoding: utf-8)
+2025-09-05 11:15:59,468 - INFO - enhanced_docling_converter - EnhancedDoclingConverter stats: {'total_processed': 1, 'ocr_checks': 0, 'ocr_retries': 0, 'engines_compared': 0, 'best_engine_counts': {}, 'errors': 0}
+2025-09-05 11:15:59,468 - INFO - unified_embedder - Successfully extracted text (39 chars) and metadata for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_11_Implicit_Explicit_Memory.txt
+2025-09-05 11:15:59,500 - INFO - enhanced_docling_converter - Forcing OCR processing for PDF: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf
+2025-09-05 11:15:59,500 - INFO - ocr_quality_checker - Checking OCR quality for: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf
+2025-09-05 11:15:59,500 - INFO - ocr_quality_checker - Attempting to configure OCR options with language: ['en'] (Preference: OCRmac > Tesseract > RapidOCR > EasyOCR)
+2025-09-05 11:15:59,500 - INFO - ocr_quality_checker - Mapping language codes for OCRmac: ['en'] -> ['en-US']
+2025-09-05 11:15:59,504 - INFO - docling.datamodel.document - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-09-05 11:15:59,533 - INFO - docling.document_converter - Going to convert document batch...
+2025-09-05 11:15:59,534 - INFO - docling.document_converter - Initializing pipeline for StandardPdfPipeline with options hash b9adc7079eaddc6c1aa6aeb3bfb0123e
+2025-09-05 11:15:59,537 - INFO - unified_embedder.subprocess - Successfully processed file with embedding: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt
+2025-09-05 11:15:59,541 - INFO - docling.models.factories.base_factory - Loading plugin 'docling_defaults'
+2025-09-05 11:15:59,543 - INFO - docling.models.factories - Registered ocr engines: ['easyocr', 'ocrmac', 'rapidocr', 'tesserocr', 'tesseract']
+2025-09-05 11:15:59,546 - INFO - docling.utils.accelerator_utils - Accelerator device: 'mps'
+2025-09-05 11:15:59,578 - INFO - unified_embedder.subprocess - Successfully processed file with embedding: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_11_Implicit_Explicit_Memory.txt
+2025-09-05 11:15:59,623 - WARNING - docling.backend.mspowerpoint_backend - Warning: image cannot be loaded by Pillow: cannot find loader for this WMF file
+2025-09-05 11:15:59,756 - WARNING - docling.backend.mspowerpoint_backend - Warning: image cannot be loaded by Pillow: cannot find loader for this WMF file
+2025-09-05 11:15:59,756 - INFO - docling.document_converter - Finished converting document lecture10_FA24_workingmemory1_full.pptx in 0.34 sec.
+2025-09-05 11:15:59,774 - WARNING - docling_core.types.doc.document - Parameter `strict_text` has been deprecated and will be ignored.
+2025-09-05 11:15:59,774 - INFO - enhanced_docling_converter -   dl_doc content length: 8674
+2025-09-05 11:15:59,965 - INFO - enhanced_docling_converter - Using HybridChunker for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/lecture10_FA24_workingmemory1_full.pptx
+2025-09-05 11:16:00,082 - INFO - enhanced_docling_converter - EnhancedDoclingConverter stats: {'total_processed': 1, 'ocr_checks': 0, 'ocr_retries': 0, 'engines_compared': 0, 'best_engine_counts': {}, 'errors': 0}
+2025-09-05 11:16:00,085 - INFO - unified_embedder - Successfully extracted text (8150 chars) and metadata for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/lecture10_FA24_workingmemory1_full.pptx
+2025-09-05 11:16:00,376 - INFO - docling.utils.accelerator_utils - Accelerator device: 'mps'
+2025-09-05 11:16:00,430 - INFO - unified_embedder.subprocess - Successfully processed file with embedding: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/lecture10_FA24_workingmemory1_full.pptx
+2025-09-05 11:16:00,722 - INFO - docling.models.factories.base_factory - Loading plugin 'docling_defaults'
+2025-09-05 11:16:00,723 - INFO - docling.models.factories - Registered picture descriptions: ['vlm', 'api']
+2025-09-05 11:16:00,723 - INFO - docling.pipeline.base_pipeline - Processing document 10_Jonides_WorkingMemory.pdf
+2025-09-05 11:16:15,926 - INFO - docling.document_converter - Finished converting document 10_Jonides_WorkingMemory.pdf in 16.42 sec.
+2025-09-05 11:16:15,926 - INFO - ocr_quality_checker - Force OCR enabled for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf. Skipping quality check.
+2025-09-05 11:16:15,926 - INFO - ocr_quality_checker - Re-processing with fresh OCR for: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf
+2025-09-05 11:16:15,926 - INFO - ocr_quality_checker - Attempting to configure Tesseract OCR options with language: ['en']
+2025-09-05 11:16:15,926 - INFO - ocr_quality_checker - Configuring TesseractOCR options with lang=['eng']
+2025-09-05 11:16:15,926 - INFO - ocr_quality_checker - Using OCR engine: Tesseract (stored in metadata)
+2025-09-05 11:16:15,934 - INFO - docling.datamodel.document - detected formats: [<InputFormat.PDF: 'pdf'>]
+2025-09-05 11:16:15,938 - INFO - docling.document_converter - Going to convert document batch...
+2025-09-05 11:16:15,938 - INFO - docling.document_converter - Initializing pipeline for StandardPdfPipeline with options hash 0ca51501807a757e2fbcb0c2bb597663
+2025-09-05 11:16:16,045 - INFO - docling.utils.accelerator_utils - Accelerator device: 'mps'
+2025-09-05 11:16:16,667 - INFO - docling.utils.accelerator_utils - Accelerator device: 'mps'
+2025-09-05 11:16:16,916 - INFO - docling.utils.accelerator_utils - Removing MPS from available devices because it is not in supported_devices=[<AcceleratorDevice.CPU: 'cpu'>, <AcceleratorDevice.CUDA: 'cuda'>]
+2025-09-05 11:16:16,916 - INFO - docling.utils.accelerator_utils - Accelerator device: 'cpu'
+2025-09-05 11:16:17,704 - INFO - docling.pipeline.base_pipeline - Processing document 10_Jonides_WorkingMemory.pdf
+2025-09-05 11:18:04,063 - INFO - docling.document_converter - Finished converting document 10_Jonides_WorkingMemory.pdf in 108.13 sec.
+2025-09-05 11:18:04,067 - INFO - ocr_quality_checker - Completed fresh OCR for: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf
+2025-09-05 11:18:04,158 - WARNING - docling_core.types.doc.document - Parameter `strict_text` has been deprecated and will be ignored.
+2025-09-05 11:18:04,158 - INFO - enhanced_docling_converter -   dl_doc content length: 145379
+2025-09-05 11:18:04,307 - INFO - enhanced_docling_converter - Using HybridChunker for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf
+2025-09-05 11:18:04,367 - ERROR - unified_embedder - Token indices sequence length is longer than the specified maximum sequence length for this model (522 > 512). Running this sequence through the model will result in indexing errors
+2025-09-05 11:18:04,940 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,941 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,941 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,941 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,941 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,941 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,942 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,942 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,942 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,942 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,942 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,942 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,943 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,943 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,943 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,943 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,944 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,944 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,944 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,944 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,944 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,945 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,945 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,945 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,945 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,945 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,946 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,946 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,946 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,946 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,946 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,947 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,947 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,947 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,947 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,947 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,947 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,948 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,948 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,948 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,948 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,948 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,948 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,949 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,949 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,949 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,949 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,949 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,950 - INFO - enhanced_docling_converter - OCR engine used and stored in metadata: Tesseract
+2025-09-05 11:18:04,950 - INFO - enhanced_docling_converter - EnhancedDoclingConverter stats: {'total_processed': 1, 'ocr_checks': 1, 'ocr_retries': 0, 'engines_compared': 0, 'best_engine_counts': {}, 'errors': 0}
+2025-09-05 11:18:04,956 - INFO - unified_embedder - Successfully extracted text (145239 chars) and metadata for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf
+2025-09-05 11:18:05,232 - INFO - unified_embedder.subprocess - OCR processing info for /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf:
+2025-09-05 11:18:05,232 - INFO - unified_embedder.subprocess -   - Quality score: N/A
+2025-09-05 11:18:05,233 - INFO - unified_embedder.subprocess -   - OCR engine: Tesseract
+2025-09-05 11:18:05,233 - INFO - unified_embedder.subprocess -   - Reprocessed: True
+2025-09-05 11:18:05,233 - INFO - unified_embedder.subprocess -   - Text content sample: Working  Memory  and Thinking
+John ]onides
+In all  its various forms, thinking recruits a complex se...
+2025-09-05 11:18:05,233 - INFO - unified_embedder.subprocess - Successfully processed file with embedding: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf
+2025-09-05 11:18:06,635 - INFO - unified_embedder - Completed processing: 4 files embedded, 6 files skipped, 0 errors.
+2025-09-05 11:18:06,636 - INFO - unified_embedder - Writing output to embeddings.json
+2025-09-05 11:18:06,655 - INFO - unified_embedder - Setting up Qdrant document store with hybrid search capabilities
+2025-09-05 11:18:06,655 - INFO - unified_embedder - Setting up FastEmbed embedders with models:
+2025-09-05 11:18:06,655 - INFO - unified_embedder -   - Dense model: BAAI/bge-large-en-v1.5
+2025-09-05 11:18:06,655 - INFO - unified_embedder -   - Sparse model: prithivida/Splade_PP_en_v1
+2025-09-05 11:18:06,656 - INFO - unified_embedder - Warming up embedders...
+2025-09-05 11:18:08,466 - INFO - unified_embedder - Embedders warmed up and ready
+2025-09-05 11:18:08,480 - INFO - unified_embedder - Embedding 185 documents with FastEmbed
+2025-09-05 11:18:08,480 - INFO - unified_embedder - Generating sparse embeddings...
+2025-09-05 11:18:22,129 - INFO - unified_embedder - Successfully generated sparse embeddings for 185 documents
+2025-09-05 11:18:22,130 - INFO - unified_embedder - Generating dense embeddings...
+2025-09-05 11:19:40,335 - INFO - unified_embedder - Successfully generated dense embeddings for 185 documents
+2025-09-05 11:19:40,335 - INFO - unified_embedder - Embedding verification: dense=True, sparse=True, content=False
+2025-09-05 11:19:40,335 - WARNING - unified_embedder - Sample document does not have text. Text field will be empty in Qdrant.
+2025-09-05 11:19:40,335 - INFO - unified_embedder - Writing 185 documents to Qdrant collection 'Psych240_FA2024_701917_ColBERT'
+2025-09-05 11:19:40,335 - INFO - unified_embedder - Writing 185 documents to document store in batches of 100
+2025-09-05 11:19:40,335 - INFO - unified_embedder - Sample document metadata before writing: ['id', 'uuid', 'folder_id', 'display_name', 'filename', 'upload_status', 'content-type', 'url', 'size', 'created_at', 'created_at_date', 'updated_at', 'updated_at_date', 'unlock_at', 'locked', 'hidden', 'lock_at', 'hidden_for_user', 'thumbnail_url', 'modified_at', 'modified_at_date', 'mime_class', 'media_entry_id', 'category', 'locked_for_user', 'visibility_level', 'downloaded_at', 'original_url', 'source', 'file_path', 'file_type', 'processed_by', 'encoding_used', 'path']
+2025-09-05 11:19:40,335 - WARNING - unified_embedder - Document 0 is missing ocr_engine_used field
+2025-09-05 11:19:40,335 - WARNING - unified_embedder - Document 1 is missing ocr_engine_used field
+2025-09-05 11:19:40,335 - WARNING - unified_embedder - Document 2 is missing ocr_engine_used field
+2025-09-05 11:19:40,335 - INFO - unified_embedder - Document 2 OCR reprocessed: False
+2025-09-05 11:19:40,335 - WARNING - unified_embedder - Document 3 is missing ocr_engine_used field
+2025-09-05 11:19:40,335 - INFO - unified_embedder - Document 3 OCR reprocessed: False
+2025-09-05 11:19:40,335 - WARNING - unified_embedder - Document 4 is missing ocr_engine_used field
+2025-09-05 11:19:40,335 - INFO - unified_embedder - Document 4 OCR reprocessed: False
+2025-09-05 11:19:40,335 - INFO - unified_embedder - Sample metadata before writing (first document):
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   id: 37706928
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   uuid: WmwuOwt3q51fTetmeCw0oKdaC9eVJbO57UIMZ2Hd
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   folder_id: 6027646
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   display_name: Lecture_10_WorkingMemory.txt
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   filename: Lecture_10_WorkingMemory.txt
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   upload_status: success
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   content-type: text/plain
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   url: https://umich.instructure.com/files/37706928/download?download_frd=1&verifier=WmwuOwt3q51fTetmeCw0oKdaC9eVJbO57UIMZ2Hd
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   size: 39
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   created_at: 2024-10-19T16:41:44Z
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   created_at_date: 2024-10-19 16:41:44+00:00
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   updated_at: 2024-10-20T14:15:25Z
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   updated_at_date: 2024-10-20 14:15:25+00:00
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   unlock_at: None
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   locked: False
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   hidden: False
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   lock_at: None
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   hidden_for_user: False
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   thumbnail_url: None
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   modified_at: 2024-10-19T16:41:44Z
+2025-09-05 11:19:40,335 - INFO - unified_embedder -   modified_at_date: 2024-10-19 16:41:44+00:00
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   mime_class: text
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   media_entry_id: None
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   category: uncategorized
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   locked_for_user: False
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   visibility_level: inherit
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   downloaded_at: 2025-05-01T14:52:33.856808Z
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   original_url: https://umich.instructure.com/files/37706928/download?download_frd=1&verifier=WmwuOwt3q51fTetmeCw0oKdaC9eVJbO57UIMZ2Hd
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   source: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   file_path: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   file_type: txt
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   processed_by: direct_txt_reader
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   encoding_used: utf-8
+2025-09-05 11:19:40,336 - INFO - unified_embedder -   path: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt
+2025-09-05 11:19:40,450 - INFO - httpx - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,453 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917_ColBERT/exists "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,588 - INFO - httpx - HTTP Request: PUT http://localhost:6333/collections/Psych240_FA2024_701917_ColBERT "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,592 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917_ColBERT/points "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,742 - INFO - httpx - HTTP Request: PUT http://localhost:6333/collections/Psych240_FA2024_701917_ColBERT/points?wait=true "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,748 - INFO - unified_embedder - Verifying metadata for document 9fd2669e4b672c32736618c27f6eb6e72070122449f5851a733cc871cf1c02d7
+2025-09-05 11:19:40,752 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917_ColBERT/points "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,752 - INFO - unified_embedder - Retrieved document metadata after writing:
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   id: 37706928
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   uuid: WmwuOwt3q51fTetmeCw0oKdaC9eVJbO57UIMZ2Hd
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   folder_id: 6027646
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   display_name: Lecture_10_WorkingMemory.txt
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   filename: Lecture_10_WorkingMemory.txt
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   upload_status: success
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   content-type: text/plain
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   url: https://umich.instructure.com/files/37706928/download?download_frd=1&verifier=WmwuOwt3q51fTetmeCw0oKdaC9eVJbO57UIMZ2Hd
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   size: 39
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   created_at: 2024-10-19T16:41:44Z
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   created_at_date: 2024-10-19 16:41:44+00:00
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   updated_at: 2024-10-20T14:15:25Z
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   updated_at_date: 2024-10-20 14:15:25+00:00
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   unlock_at: None
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   locked: False
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   hidden: False
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   lock_at: None
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   hidden_for_user: False
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   thumbnail_url: None
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   modified_at: 2024-10-19T16:41:44Z
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   modified_at_date: 2024-10-19 16:41:44+00:00
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   mime_class: text
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   media_entry_id: None
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   category: uncategorized
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   locked_for_user: False
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   visibility_level: inherit
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   downloaded_at: 2025-05-01T14:52:33.856808Z
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   original_url: https://umich.instructure.com/files/37706928/download?download_frd=1&verifier=WmwuOwt3q51fTetmeCw0oKdaC9eVJbO57UIMZ2Hd
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   source: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   file_path: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   file_type: txt
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   processed_by: direct_txt_reader
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   encoding_used: utf-8
+2025-09-05 11:19:40,753 - INFO - unified_embedder -   path: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/Lecture_10_WorkingMemory.txt
+2025-09-05 11:19:40,754 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917_ColBERT/exists "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,755 - INFO - unified_embedder - Sample document metadata before writing: ['id', 'uuid', 'folder_id', 'display_name', 'filename', 'upload_status', 'content-type', 'url', 'size', 'size_date', 'created_at', 'created_at_date', 'updated_at', 'updated_at_date', 'unlock_at', 'locked', 'hidden', 'lock_at', 'hidden_for_user', 'thumbnail_url', 'modified_at', 'modified_at_date', 'mime_class', 'media_entry_id', 'category', 'locked_for_user', 'visibility_level', 'downloaded_at', 'original_url', 'dl_meta', 'ocr_quality_checked', 'ocr_reprocessed', 'ocr_engine_used', 'file_path', 'chunker', 'path', 'chunk_index', 'total_chunks']
+2025-09-05 11:19:40,755 - INFO - unified_embedder - Document 0 has OCR engine: Tesseract
+2025-09-05 11:19:40,755 - INFO - unified_embedder - Document 0 OCR reprocessed: True
+2025-09-05 11:19:40,755 - INFO - unified_embedder - Document 1 has OCR engine: Tesseract
+2025-09-05 11:19:40,755 - INFO - unified_embedder - Document 1 OCR reprocessed: True
+2025-09-05 11:19:40,755 - INFO - unified_embedder - Document 2 has OCR engine: Tesseract
+2025-09-05 11:19:40,755 - INFO - unified_embedder - Document 2 OCR reprocessed: True
+2025-09-05 11:19:40,755 - INFO - unified_embedder - Document 3 has OCR engine: Tesseract
+2025-09-05 11:19:40,755 - INFO - unified_embedder - Document 3 OCR reprocessed: True
+2025-09-05 11:19:40,755 - INFO - unified_embedder - Document 4 has OCR engine: Tesseract
+2025-09-05 11:19:40,755 - INFO - unified_embedder - Document 4 OCR reprocessed: True
+2025-09-05 11:19:40,755 - INFO - unified_embedder - Sample metadata before writing (first document):
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   id: 37654903
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   uuid: GVvlqJKm8PM6H86vS2pbiVpLJJBVRIHguF4BU1au
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   folder_id: 6027646
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   display_name: 10_Jonides_WorkingMemory.pdf
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   filename: 10_Jonides_WorkingMemory.pdf
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   upload_status: success
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   content-type: application/pdf
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   url: https://umich.instructure.com/files/37654903/download?download_frd=1&verifier=GVvlqJKm8PM6H86vS2pbiVpLJJBVRIHguF4BU1au
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   size: 1232283
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   size_date: 1232-10-09 00:00:00+00:00
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   created_at: 2024-10-16T22:49:04Z
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   created_at_date: 2024-10-16 22:49:04+00:00
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   updated_at: 2024-10-17T22:53:56Z
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   updated_at_date: 2024-10-17 22:53:56+00:00
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   unlock_at: None
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   locked: False
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   hidden: False
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   lock_at: None
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   hidden_for_user: False
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   thumbnail_url: None
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   modified_at: 2024-10-16T22:49:04Z
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   modified_at_date: 2024-10-16 22:49:04+00:00
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   mime_class: pdf
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   media_entry_id: None
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   category: uncategorized
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   locked_for_user: False
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   visibility_level: inherit
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   downloaded_at: 2025-05-01T14:52:29.990574Z
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   original_url: https://umich.instructure.com/files/37654903/download?download_frd=1&verifier=GVvlqJKm8PM6H86vS2pbiVpLJJBVRIHguF4BU1au
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   dl_meta: {'text': "Squire, L  R. (1992).  Memory  and  the hippocampus:  A  synthesis from findings with rats, monkeys, and humans. Psychological Review 99, 195-231.\nTurner,  M.  L,  and  R. W.  Engle (1989). ls  working memory  task dependent? Journal of Memory  and  Language 28,  12  7-154.\nIVallar, G., and A. D. Baddeley (1984). Fractionation  of working memory: Neuropsycholog› ical evidence  for  a  phonological  short-term  store. Journal of  Verbal  Learning and Verbal Behavior 23,  151-161.\nVallar, G., and  A.  D.  Baddeley (1987). Phonological short-term  store  and  sentence pro› cessing. Cognitive Neuropsychology 4, 417-438.\n'Vallar,  G., and T. Shallice,  eds. (1990). Neuropsychological impairments of short-term memory. Cambridge: Cambridge University Press.\nWarrington,  E. K., and  T.  Shallice (1969). The  selective impairment of  auditory  verbal short-term memory. Brain 92, 885-896.\nWaters,  G., D. Caplan, and N. Hildebrandt (1991). On  the structure of verbal short-term memory and  its functional role in sentence comprehension: Evidence from neuro› psychology. Cognitive Neuropsycho/ogy 8, 81-126.\nWickens, D. D., D. G. Born, and C. K Allen (1963). Proactive inhibition and item similarity in short-term memory. Journal of Verbal Learning and Verbal Behavior 2, 440-445.\nWilson, F. A. W., S. P. 0  Scalaidhe,  and P. S. Goldman-Rakic  (1993). Dissociation  of object and  spatial  processing  domains  in  primate prefrontal  cortex. -Science 260,  19551958.\ni\nI\n,, ii\nii", 'meta': {'schema_name': 'docling_core.transforms.chunker.DocMeta', 'version': '1.0.0', 'doc_items': [{'self_ref': '#/texts/934', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 62.216, 't': 729.4330043945313, 'r': 448.175, 'b': 707.3090043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 146]}]}, {'self_ref': '#/texts/935', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 61.966, 't': 705.1690043945313, 'r': 449.258, 'b': 682.7460043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 127]}]}, {'self_ref': '#/texts/936', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 57.346, 't': 680.0530043945313, 'r': 449.946, 'b': 646.0150043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 208]}]}, {'self_ref': '#/texts/937', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 61.726, 't': 643.5730043945313, 'r': 444.494, 'b': 621.4490043945312, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 139]}]}, {'self_ref': '#/texts/938', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 54.426, 't': 619.2990043945313, 'r': 453.45, 'b': 597.0530043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 136]}]}, {'self_ref': '#/texts/939', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 61.489, 't': 594.1930043945313, 'r': 447.465, 'b': 572.0690043945312, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 130]}]}, {'self_ref': '#/texts/940', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 61.246, 't': 569.3830043945313, 'r': 447.378, 'b': 535.0990043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 218]}]}, {'self_ref': '#/texts/941', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 61.246, 't': 532.4030043945313, 'r': 448.966, 'b': 510.2890043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 172]}]}, {'self_ref': '#/texts/942', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 61.246, 't': 507.8430043945313, 'r': 447.122, 'b': 473.5960043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 187]}]}, {'self_ref': '#/texts/943', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 558.426, 't': 489.9630043945313, 'r': 565.926, 'b': 476.0880043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 1]}]}, {'self_ref': '#/texts/944', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 558.426, 't': 477.9200043945313, 'r': 561.283, 'b': 473.5100043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 1]}]}, {'self_ref': '#/texts/945', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 553.076, 't': 318.5790043945313, 'r': 562.076, 'b': 307.7790043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 2]}, {'page_no': 51, 'bbox': {'l': 553.076, 't': 306.7620043945313, 'r': 555.978, 'b': 303.5220043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [3, 5]}]}, {'self_ref': '#/texts/946', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 552.836, 't': 303.3550043945313, 'r': 560.332, 'b': 294.9850043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 2]}]}], 'headings': ['References'], 'origin': {'mimetype': 'application/pdf', 'binary_hash': 9286906086225515863, 'filename': '10_Jonides_WorkingMemory.pdf'}}}
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   ocr_quality_checked: False
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   ocr_reprocessed: True
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   ocr_engine_used: Tesseract
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   file_path: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf
+2025-09-05 11:19:40,755 - INFO - unified_embedder -   chunker: {'chunker_type': 'HybridChunker', 'tokenizer': {'name': 'sentence-transformers/all-MiniLM-L6-v2', 'type': 'HuggingFaceTokenizer'}, 'max_tokens': 1024, 'merge_peers': True, 'delimiter': '\n', 'strategy': 'Combines document structure with token-aware chunking', 'description': "First chunks by document structure, then ensures chunks don't exceed token limit", 'inner_chunker': {'type': 'HierarchicalChunker', 'description': 'Chunks based on document structure (headings, paragraphs, etc.)'}}
+2025-09-05 11:19:40,756 - INFO - unified_embedder -   path: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf
+2025-09-05 11:19:40,756 - INFO - unified_embedder -   chunk_index: 87
+2025-09-05 11:19:40,756 - INFO - unified_embedder -   total_chunks: 172
+2025-09-05 11:19:40,758 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917_ColBERT/points "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,880 - INFO - httpx - HTTP Request: PUT http://localhost:6333/collections/Psych240_FA2024_701917_ColBERT/points?wait=true "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,882 - INFO - unified_embedder - Verifying metadata for document a2f71c4d9236f8914ef929fd7d607f00bdb8c28df535623c6ce4bb1ec10bfbf0
+2025-09-05 11:19:40,884 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917_ColBERT/points "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,885 - INFO - unified_embedder - Retrieved document metadata after writing:
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   id: 37654903
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   uuid: GVvlqJKm8PM6H86vS2pbiVpLJJBVRIHguF4BU1au
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   folder_id: 6027646
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   display_name: 10_Jonides_WorkingMemory.pdf
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   filename: 10_Jonides_WorkingMemory.pdf
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   upload_status: success
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   content-type: application/pdf
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   url: https://umich.instructure.com/files/37654903/download?download_frd=1&verifier=GVvlqJKm8PM6H86vS2pbiVpLJJBVRIHguF4BU1au
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   size: 1232283
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   size_date: 1232-10-09 00:00:00+00:00
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   created_at: 2024-10-16T22:49:04Z
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   created_at_date: 2024-10-16 22:49:04+00:00
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   updated_at: 2024-10-17T22:53:56Z
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   updated_at_date: 2024-10-17 22:53:56+00:00
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   unlock_at: None
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   locked: False
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   hidden: False
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   lock_at: None
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   hidden_for_user: False
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   thumbnail_url: None
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   modified_at: 2024-10-16T22:49:04Z
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   modified_at_date: 2024-10-16 22:49:04+00:00
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   mime_class: pdf
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   media_entry_id: None
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   category: uncategorized
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   locked_for_user: False
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   visibility_level: inherit
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   downloaded_at: 2025-05-01T14:52:29.990574Z
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   original_url: https://umich.instructure.com/files/37654903/download?download_frd=1&verifier=GVvlqJKm8PM6H86vS2pbiVpLJJBVRIHguF4BU1au
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   dl_meta: {'text': "Squire, L  R. (1992).  Memory  and  the hippocampus:  A  synthesis from findings with rats, monkeys, and humans. Psychological Review 99, 195-231.\nTurner,  M.  L,  and  R. W.  Engle (1989). ls  working memory  task dependent? Journal of Memory  and  Language 28,  12  7-154.\nIVallar, G., and A. D. Baddeley (1984). Fractionation  of working memory: Neuropsycholog› ical evidence  for  a  phonological  short-term  store. Journal of  Verbal  Learning and Verbal Behavior 23,  151-161.\nVallar, G., and  A.  D.  Baddeley (1987). Phonological short-term  store  and  sentence pro› cessing. Cognitive Neuropsychology 4, 417-438.\n'Vallar,  G., and T. Shallice,  eds. (1990). Neuropsychological impairments of short-term memory. Cambridge: Cambridge University Press.\nWarrington,  E. K., and  T.  Shallice (1969). The  selective impairment of  auditory  verbal short-term memory. Brain 92, 885-896.\nWaters,  G., D. Caplan, and N. Hildebrandt (1991). On  the structure of verbal short-term memory and  its functional role in sentence comprehension: Evidence from neuro› psychology. Cognitive Neuropsycho/ogy 8, 81-126.\nWickens, D. D., D. G. Born, and C. K Allen (1963). Proactive inhibition and item similarity in short-term memory. Journal of Verbal Learning and Verbal Behavior 2, 440-445.\nWilson, F. A. W., S. P. 0  Scalaidhe,  and P. S. Goldman-Rakic  (1993). Dissociation  of object and  spatial  processing  domains  in  primate prefrontal  cortex. -Science 260,  19551958.\ni\nI\n,, ii\nii", 'meta': {'schema_name': 'docling_core.transforms.chunker.DocMeta', 'version': '1.0.0', 'doc_items': [{'self_ref': '#/texts/934', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 62.216, 't': 729.4330043945313, 'r': 448.175, 'b': 707.3090043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 146]}]}, {'self_ref': '#/texts/935', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 61.966, 't': 705.1690043945313, 'r': 449.258, 'b': 682.7460043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 127]}]}, {'self_ref': '#/texts/936', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 57.346, 't': 680.0530043945313, 'r': 449.946, 'b': 646.0150043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 208]}]}, {'self_ref': '#/texts/937', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 61.726, 't': 643.5730043945313, 'r': 444.494, 'b': 621.4490043945312, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 139]}]}, {'self_ref': '#/texts/938', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 54.426, 't': 619.2990043945313, 'r': 453.45, 'b': 597.0530043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 136]}]}, {'self_ref': '#/texts/939', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 61.489, 't': 594.1930043945313, 'r': 447.465, 'b': 572.0690043945312, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 130]}]}, {'self_ref': '#/texts/940', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 61.246, 't': 569.3830043945313, 'r': 447.378, 'b': 535.0990043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 218]}]}, {'self_ref': '#/texts/941', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 61.246, 't': 532.4030043945313, 'r': 448.966, 'b': 510.2890043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 172]}]}, {'self_ref': '#/texts/942', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 61.246, 't': 507.8430043945313, 'r': 447.122, 'b': 473.5960043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 187]}]}, {'self_ref': '#/texts/943', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 558.426, 't': 489.9630043945313, 'r': 565.926, 'b': 476.0880043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 1]}]}, {'self_ref': '#/texts/944', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 558.426, 't': 477.9200043945313, 'r': 561.283, 'b': 473.5100043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 1]}]}, {'self_ref': '#/texts/945', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 553.076, 't': 318.5790043945313, 'r': 562.076, 'b': 307.7790043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 2]}, {'page_no': 51, 'bbox': {'l': 553.076, 't': 306.7620043945313, 'r': 555.978, 'b': 303.5220043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [3, 5]}]}, {'self_ref': '#/texts/946', 'parent': {'$ref': '#/body'}, 'children': [], 'content_layer': 'body', 'label': 'text', 'prov': [{'page_no': 51, 'bbox': {'l': 552.836, 't': 303.3550043945313, 'r': 560.332, 'b': 294.9850043945313, 'coord_origin': 'BOTTOMLEFT'}, 'charspan': [0, 2]}]}], 'headings': ['References'], 'origin': {'mimetype': 'application/pdf', 'binary_hash': 9286906086225515863, 'filename': '10_Jonides_WorkingMemory.pdf'}}}
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   ocr_quality_checked: False
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   ocr_reprocessed: True
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   ocr_engine_used: Tesseract
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   file_path: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   chunker: {'chunker_type': 'HybridChunker', 'tokenizer': {'name': 'sentence-transformers/all-MiniLM-L6-v2', 'type': 'HuggingFaceTokenizer'}, 'max_tokens': 1024, 'merge_peers': True, 'delimiter': '\n', 'strategy': 'Combines document structure with token-aware chunking', 'description': "First chunks by document structure, then ensures chunks don't exceed token limit", 'inner_chunker': {'type': 'HierarchicalChunker', 'description': 'Chunks based on document structure (headings, paragraphs, etc.)'}}
+2025-09-05 11:19:40,885 - INFO - unified_embedder -   path: /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/canvas_scraper_claude/canvas_data/course_701917/AI Assignment Files/AI Assignment 3/10_Jonides_WorkingMemory.pdf
+2025-09-05 11:19:40,886 - INFO - unified_embedder -   chunk_index: 87
+2025-09-05 11:19:40,886 - INFO - unified_embedder -   total_chunks: 172
+2025-09-05 11:19:40,886 - INFO - unified_embedder - Finished writing documents. Stats: {'total_documents': 185, 'batches_written': 2, 'write_errors': 0}
+2025-09-05 11:19:40,886 - INFO - unified_embedder - Successfully wrote 185 documents to Qdrant
+2025-09-05 11:19:40,886 - INFO - unified_embedder - Verifying document storage in Qdrant...
+2025-09-05 11:19:40,886 - INFO - unified_embedder - Connecting to Qdrant at http://localhost:6333, collection: Psych240_FA2024_701917_ColBERT
+2025-09-05 11:19:40,886 - INFO - unified_embedder - Qdrant connection resolved:
+2025-09-05 11:19:40,886 - INFO - unified_embedder -   URL: http://localhost:6333
+2025-09-05 11:19:40,886 - INFO - unified_embedder -   Collection: Psych240_FA2024_701917_ColBERT
+2025-09-05 11:19:40,886 - INFO - unified_embedder -   API Key: ey******************************************************************************ceVM
+2025-09-05 11:19:40,889 - WARNING - unified_embedder - /Users/wgehring/Dropbox (Personal)/ai_2025/LATEST_GREATEST/unified_embedder/unified_embedder.py:1528: UserWarning: Api key is used with an insecure connection.
+2025-09-05 11:19:40,923 - INFO - httpx - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,925 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917_ColBERT "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,926 - INFO - unified_embedder - Collection info: status=<CollectionStatus.GREEN: 'green'> optimizer_status=<OptimizersStatusOneOf.OK: 'ok'> vectors_count=None indexed_vectors_count=185 points_count=185 segments_count=6 config=CollectionConfig(params=CollectionParams(vectors={'text-dense': VectorParams(size=1024, distance=<Distance.COSINE: 'Cosine'>, hnsw_config=None, quantization_config=None, on_disk=False, datatype=None, multivector_config=None)}, shard_number=1, sharding_method=None, replication_factor=1, write_consistency_factor=1, read_fan_out_factor=None, on_disk_payload=True, sparse_vectors={'text-sparse': SparseVectorParams(index=SparseIndexParams(full_scan_threshold=None, on_disk=False, datatype=None), modifier=<Modifier.IDF: 'idf'>)}), hnsw_config=HnswConfig(m=16, ef_construct=64, full_scan_threshold=10000, max_indexing_threads=0, on_disk=False, payload_m=None), optimizer_config=OptimizersConfig(deleted_threshold=0.2, vacuum_min_vector_number=1000, default_segment_number=0, max_segment_size=None, memmap_threshold=None, indexing_threshold=10000, flush_interval_sec=5, max_optimization_threads=None), wal_config=WalConfig(wal_capacity_mb=32, wal_segments_ahead=0), quantization_config=None, strict_mode_config=StrictModeConfigOutput(enabled=False, max_query_limit=None, max_timeout=None, unindexed_filtering_retrieve=None, unindexed_filtering_update=None, search_max_hnsw_ef=None, search_allow_exact=None, search_max_oversampling=None, upsert_max_batchsize=None, max_collection_vector_size_bytes=None, read_rate_limit=None, write_rate_limit=None, max_collection_payload_size_bytes=None, max_points_count=None, filter_max_conditions=None, condition_max_size=None, multivector_config=None, sparse_config=None)) payload_schema={}
+2025-09-05 11:19:40,930 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917_ColBERT/points/count "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,930 - INFO - unified_embedder - Total documents in collection: 185
+2025-09-05 11:19:40,931 - INFO - unified_embedder - Retrieving 5 documents to verify payload contents...
+2025-09-05 11:19:40,935 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917_ColBERT/points/scroll "HTTP/1.1 200 OK"
+2025-09-05 11:19:40,937 - INFO - unified_embedder - Document 1/5 (ID: 00ebfec4-301c-5792-ac42-e6205ad378ec):
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Content field exists with 1024 characters
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Content preview: chonomic Science 5, 153- 154. ;  Daneman, M., and P. A  Carpenter (1980). Individual differences  in...
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Vectors: dense=True, sparse=True
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Dense vector dimension: 1024
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Sparse vector has 152 non-zero elements
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Metadata fields: ['id', 'content', 'blob', 'meta', 'score']
+2025-09-05 11:19:40,937 - INFO - unified_embedder - --------------------------------------------------
+2025-09-05 11:19:40,937 - INFO - unified_embedder - Document 2/5 (ID: 04672b92-cf86-5cde-82f5-3f781993e665):
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Content field exists with 1024 characters
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Content preview: does not  include a facility, for example, for nonlinguistic auditory informa› tion (for example, th...
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Vectors: dense=True, sparse=True
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Dense vector dimension: 1024
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Sparse vector has 182 non-zero elements
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Metadata fields: ['id', 'content', 'blob', 'meta', 'score']
+2025-09-05 11:19:40,937 - INFO - unified_embedder - --------------------------------------------------
+2025-09-05 11:19:40,937 - INFO - unified_embedder - Document 3/5 (ID: 06fe634a-1d1e-5526-aeb0-1e2b61c6935a):
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Content field exists with 961 characters
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Content preview: he  distinction between  two  buffer systems of working memory, one for visuospatial information and...
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Vectors: dense=True, sparse=True
+2025-09-05 11:19:40,937 - INFO - unified_embedder -   Dense vector dimension: 1024
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Sparse vector has 124 non-zero elements
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Metadata fields: ['id', 'content', 'blob', 'meta', 'score']
+2025-09-05 11:19:40,938 - INFO - unified_embedder - --------------------------------------------------
+2025-09-05 11:19:40,938 - INFO - unified_embedder - Document 4/5 (ID: 07880924-101b-5f93-bd54-8d01d296673f):
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Content field exists with 992 characters
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Content preview: iewing a scene. These are all tasks that may depend on use of  an  internal  representation that inc...
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Vectors: dense=True, sparse=True
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Dense vector dimension: 1024
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Sparse vector has 165 non-zero elements
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Metadata fields: ['id', 'content', 'blob', 'meta', 'score']
+2025-09-05 11:19:40,938 - INFO - unified_embedder - --------------------------------------------------
+2025-09-05 11:19:40,938 - INFO - unified_embedder - Document 5/5 (ID: 07f52ad0-3942-5e84-8fca-24c4c8bf075e):
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Content field exists with 666 characters
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Content preview: tion. Thus, the  two  patients cited above, H. M. and K. F., constitute  a double dissociation for w...
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Vectors: dense=True, sparse=True
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Dense vector dimension: 1024
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Sparse vector has 146 non-zero elements
+2025-09-05 11:19:40,938 - INFO - unified_embedder -   Metadata fields: ['id', 'content', 'blob', 'meta', 'score']
+2025-09-05 11:19:40,938 - INFO - unified_embedder - --------------------------------------------------
+2025-09-05 11:19:40,938 - INFO - unified_embedder - Verification complete. Checked 5 out of 185 documents.
+2025-09-05 11:19:40,938 - INFO - unified_embedder - SUCCESS: Documents appear to be stored correctly with text field and vectors!
+2025-09-05 11:19:40,938 - INFO - unified_embedder - Done!

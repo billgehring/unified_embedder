@@ -1,0 +1,1 @@
+This is a test document about amnesia and memory loss. Patients with amnesia often show problems with memory formation and retrieval. This is used for testing the performance optimizations in the embedding pipeline.

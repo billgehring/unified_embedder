@@ -1,0 +1,125 @@
+2025-08-27 13:13:56,777 - INFO - test_retrieval - Testing retrieval from collection: Psych240_FA2024_701917
+2025-08-27 13:13:56,777 - INFO - test_retrieval - Qdrant URL: http://localhost:6333
+2025-08-27 13:13:56,851 - INFO - httpx - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-27 13:13:56,853 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections "HTTP/1.1 200 OK"
+2025-08-27 13:13:56,854 - INFO - test_retrieval - Connected to Qdrant. Available collections: ['test_pdf', 'test_fixes', 'test_july_5', 'Fall_2024_Psych_240', 'Psych240_FA2024_701917', 'test_fixes_txt']
+2025-08-27 13:13:56,855 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917 "HTTP/1.1 200 OK"
+2025-08-27 13:13:56,856 - INFO - test_retrieval - Collection 'Psych240_FA2024_701917' info:
+2025-08-27 13:13:56,856 - INFO - test_retrieval -   - Points count: 212
+2025-08-27 13:13:56,856 - INFO - test_retrieval -   - Vectors config: {'text-dense': VectorParams(size=1024, distance=<Distance.COSINE: 'Cosine'>, hnsw_config=None, quantization_config=None, on_disk=False, datatype=None, multivector_config=None)}
+2025-08-27 13:13:56,858 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917 "HTTP/1.1 200 OK"
+2025-08-27 13:13:56,858 - INFO - test_retrieval - === Collection Diagnosis ===
+2025-08-27 13:13:56,858 - INFO - test_retrieval - Collection: Psych240_FA2024_701917
+2025-08-27 13:13:56,858 - INFO - test_retrieval - Status: green
+2025-08-27 13:13:56,858 - INFO - test_retrieval - Points count: 212
+2025-08-27 13:13:56,858 - INFO - test_retrieval - Config: params=CollectionParams(vectors={'text-dense': VectorParams(size=1024, distance=<Distance.COSINE: 'Cosine'>, hnsw_config=None, quantization_config=None, on_disk=False, datatype=None, multivector_config=None)}, shard_number=1, sharding_method=None, replication_factor=1, write_consistency_factor=1, read_fan_out_factor=None, on_disk_payload=True, sparse_vectors={'text-sparse': SparseVectorParams(index=SparseIndexParams(full_scan_threshold=None, on_disk=False, datatype=None), modifier=<Modifier.IDF: 'idf'>)}) hnsw_config=HnswConfig(m=16, ef_construct=64, full_scan_threshold=10000, max_indexing_threads=0, on_disk=False, payload_m=None) optimizer_config=OptimizersConfig(deleted_threshold=0.2, vacuum_min_vector_number=1000, default_segment_number=0, max_segment_size=None, memmap_threshold=None, indexing_threshold=10000, flush_interval_sec=5, max_optimization_threads=None) wal_config=WalConfig(wal_capacity_mb=32, wal_segments_ahead=0) quantization_config=None strict_mode_config=StrictModeConfigOutput(enabled=False, max_query_limit=None, max_timeout=None, unindexed_filtering_retrieve=None, unindexed_filtering_update=None, search_max_hnsw_ef=None, search_allow_exact=None, search_max_oversampling=None, upsert_max_batchsize=None, max_collection_vector_size_bytes=None, read_rate_limit=None, write_rate_limit=None, max_collection_payload_size_bytes=None, max_points_count=None, filter_max_conditions=None, condition_max_size=None, multivector_config=None, sparse_config=None)
+2025-08-27 13:13:56,860 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917/points/scroll "HTTP/1.1 200 OK"
+2025-08-27 13:13:56,861 - INFO - test_retrieval - Sample point structure:
+2025-08-27 13:13:56,861 - INFO - test_retrieval -   ID: 002c08d1-6e95-5d74-98f0-d91f6c6cb032
+2025-08-27 13:13:56,861 - INFO - test_retrieval -   Payload keys: ['id', 'content', 'blob', 'meta', 'score']
+2025-08-27 13:13:56,861 - INFO - test_retrieval -   Has vector: True
+2025-08-27 13:13:56,862 - INFO - test_retrieval -   Vector types: ['text-dense', 'text-sparse']
+2025-08-27 13:13:56,862 - INFO - test_retrieval -     text-dense: length 1024
+2025-08-27 13:13:57,505 - INFO - test_retrieval - Testing retrieval from collection: Psych240_FA2024_701917
+2025-08-27 13:13:57,505 - INFO - test_retrieval - Qdrant URL: http://localhost:6333
+2025-08-27 13:13:57,580 - INFO - httpx - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-27 13:13:57,582 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections "HTTP/1.1 200 OK"
+2025-08-27 13:13:57,582 - INFO - test_retrieval - Connected to Qdrant. Available collections: ['test_pdf', 'test_fixes', 'test_july_5', 'Fall_2024_Psych_240', 'Psych240_FA2024_701917', 'test_fixes_txt']
+2025-08-27 13:13:57,584 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917 "HTTP/1.1 200 OK"
+2025-08-27 13:13:57,585 - INFO - test_retrieval - Collection 'Psych240_FA2024_701917' info:
+2025-08-27 13:13:57,585 - INFO - test_retrieval -   - Points count: 212
+2025-08-27 13:13:57,585 - INFO - test_retrieval -   - Vectors config: {'text-dense': VectorParams(size=1024, distance=<Distance.COSINE: 'Cosine'>, hnsw_config=None, quantization_config=None, on_disk=False, datatype=None, multivector_config=None)}
+2025-08-27 13:13:57,585 - INFO - test_retrieval - 
+=== Getting 3 sample documents ===
+2025-08-27 13:13:57,588 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917/points/scroll "HTTP/1.1 200 OK"
+2025-08-27 13:13:57,589 - INFO - test_retrieval - Retrieved 3 sample documents
+2025-08-27 13:13:57,589 - INFO - test_retrieval - 
+Sample 1:
+2025-08-27 13:13:57,589 - INFO - test_retrieval -   ID: 002c08d1-6e95-5d74-98f0-d91f6c6cb032
+2025-08-27 13:13:57,589 - INFO - test_retrieval -   Has vectors: True
+2025-08-27 13:13:57,589 - INFO - test_retrieval -   Content (506 chars): t or ideal example
+· categorize based on similarity to prototypeHow are things similar to each other?
+· Concepts may lie in a geometric space
+or
+· Similarity may be based on concordance of multiple fe...
+2025-08-27 13:13:57,589 - INFO - test_retrieval - 
+Sample 2:
+2025-08-27 13:13:57,589 - INFO - test_retrieval -   ID: 0113ad21-099a-5ef6-9f23-8679173450d7
+2025-08-27 13:13:57,590 - INFO - test_retrieval -   Has vectors: True
+2025-08-27 13:13:57,590 - INFO - test_retrieval -   Content (375 chars): lty #3
+Vary the conditions of learning
+No pain, no gain…..
+31
+32Why do learning conditions matter?
+• Encoding specificity: memory is better when cues present at encoding are also present at retrieval ...
+2025-08-27 13:13:57,590 - INFO - test_retrieval - 
+Sample 3:
+2025-08-27 13:13:57,590 - INFO - test_retrieval -   ID: 015389e0-92f7-59e9-b237-44e04dd2c9d2
+2025-08-27 13:13:57,590 - INFO - test_retrieval -   Has vectors: True
+2025-08-27 13:13:57,590 - INFO - test_retrieval -   Content (512 chars): gories
+
+is that we tend to put category,
+
+things into categoriesthat are similar.
+
+And so this idea of similarity is sort of goes hand in hand
+
+with this idea of, categorization.
+
+So let me try this
+
+...
+2025-08-27 13:13:57,590 - INFO - test_retrieval - 
+=== Testing similarity search ===
+2025-08-27 13:13:57,590 - INFO - test_retrieval - Query: 'categorization'
+Calculating embeddings:   0%|          | 0/1 [00:00<?, ?it/s]Calculating embeddings: 100%|██████████| 1/1 [00:00<00:00, 51.24it/s]
+2025-08-27 13:13:58,908 - INFO - test_retrieval - Generated query embedding with dimension: 1024
+2025-08-27 13:13:58,917 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917/points/query "HTTP/1.1 200 OK"
+2025-08-27 13:13:58,917 - INFO - test_retrieval - Found 2 similar documents:
+2025-08-27 13:13:58,917 - INFO - test_retrieval - 
+--- Result 1 (score: 0.7896) ---
+2025-08-27 13:13:58,917 - INFO - test_retrieval -   📄 File: lecturenotes12_semantic_memory_concepts_categorization.pdf
+2025-08-27 13:13:58,917 - INFO - test_retrieval -   📊 Content length: 124 chars
+2025-08-27 13:13:58,917 - INFO - test_retrieval -   📝 Content: Issues: (a) What is the value of categorization? (b) An exemplar theory of categorization (c) Geometric theory of similarity
+2025-08-27 13:13:58,917 - INFO - test_retrieval -   🏷️  created_at: 2024-10-16T22:27:49Z
+2025-08-27 13:13:58,917 - INFO - test_retrieval -   🏷️  size: 142540
+2025-08-27 13:13:58,917 - INFO - test_retrieval - 
+--- Result 2 (score: 0.7702) ---
+2025-08-27 13:13:58,917 - INFO - test_retrieval -   📄 File: Lecture12_ConceptsCategorization_Transcript.txt
+2025-08-27 13:13:58,917 - INFO - test_retrieval -   🔧 Processed by: direct_txt_reader
+2025-08-27 13:13:58,918 - INFO - test_retrieval -   📊 Content length: 512 chars
+2025-08-27 13:13:58,918 - INFO - test_retrieval -   📝 Content: y have thought about this. And the first view of categorizationactually goes back, I think, to the time of Aristotle, so thousands of years. And this is sort of a classical view. It may be the most in...
+2025-08-27 13:13:58,918 - INFO - test_retrieval -   🏷️  file_type: txt
+2025-08-27 13:13:58,918 - INFO - test_retrieval -   🏷️  source: /Users/wgehring/Dropbox (Personal)/ai_2025/canvas_scraper_claude/canvas_data/course_701917/Lecture Slides and Zoom/Lecture 12 - Semantic Memory - Categorization/Lecture12_ConceptsCategorization_Transcript.txt
+2025-08-27 13:13:58,918 - INFO - test_retrieval -   🏷️  created_at: 2024-10-16T22:35:50Z
+2025-08-27 13:13:58,918 - INFO - test_retrieval -   🏷️  size: 110723
+2025-08-27 13:13:58,918 - INFO - test_retrieval - 
+=== Testing Haystack document store ===
+2025-08-27 13:13:58,951 - INFO - httpx - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-08-27 13:13:58,953 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917/exists "HTTP/1.1 200 OK"
+2025-08-27 13:13:58,956 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917 "HTTP/1.1 200 OK"
+2025-08-27 13:13:58,969 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917/points/scroll "HTTP/1.1 200 OK"
+2025-08-27 13:13:59,031 - INFO - test_retrieval - Total documents in store: 212
+2025-08-27 13:13:59,031 - INFO - test_retrieval - Sample doc 1:
+2025-08-27 13:13:59,031 - INFO - test_retrieval -   Content: t or ideal example
+· categorize based on similarity to prototypeHow are things similar to each other...
+2025-08-27 13:13:59,031 - INFO - test_retrieval -   Meta keys: ['id', 'uuid', 'folder_id', 'folder_id_date', 'display_name', 'filename', 'upload_status', 'content-type', 'url', 'size', 'created_at', 'created_at_date', 'updated_at', 'updated_at_date', 'unlock_at', 'locked', 'hidden', 'lock_at', 'hidden_for_user', 'thumbnail_url', 'modified_at', 'modified_at_date', 'mime_class', 'media_entry_id', 'category', 'locked_for_user', 'visibility_level', 'downloaded_at', 'original_url', 'dl_meta', 'ocr_quality_checked', 'ocr_reprocessed', 'ocr_engine_used', 'file_path', 'chunker', 'path', 'chunk_index', 'total_chunks']
+2025-08-27 13:13:59,031 - INFO - test_retrieval - Sample doc 2:
+2025-08-27 13:13:59,031 - INFO - test_retrieval -   Content: lty #3
+Vary the conditions of learning
+No pain, no gain…..
+31
+32Why do learning conditions matter?
+•...
+2025-08-27 13:13:59,032 - INFO - test_retrieval -   Meta keys: ['id', 'uuid', 'folder_id', 'display_name', 'filename', 'upload_status', 'content-type', 'url', 'size', 'created_at', 'created_at_date', 'updated_at', 'updated_at_date', 'unlock_at', 'locked', 'hidden', 'lock_at', 'hidden_for_user', 'thumbnail_url', 'modified_at', 'modified_at_date', 'mime_class', 'media_entry_id', 'category', 'locked_for_user', 'visibility_level', 'downloaded_at', 'original_url', 'dl_meta', 'ocr_quality_checked', 'ocr_reprocessed', 'ocr_engine_used', 'file_path', 'chunker', 'path', 'chunk_index', 'total_chunks']
+2025-08-27 13:13:59,032 - INFO - test_retrieval - Sample doc 3:
+2025-08-27 13:13:59,032 - INFO - test_retrieval -   Content: gories
+
+is that we tend to put category,
+
+things into categoriesthat are similar.
+
+And so this idea ...
+2025-08-27 13:13:59,032 - INFO - test_retrieval -   Meta keys: ['id', 'uuid', 'folder_id', 'folder_id_date', 'display_name', 'filename', 'upload_status', 'content-type', 'url', 'size', 'created_at', 'created_at_date', 'updated_at', 'updated_at_date', 'unlock_at', 'locked', 'hidden', 'lock_at', 'hidden_for_user', 'thumbnail_url', 'modified_at', 'modified_at_date', 'mime_class', 'media_entry_id', 'category', 'locked_for_user', 'visibility_level', 'downloaded_at', 'original_url', 'source', 'file_path', 'file_type', 'processed_by', 'path', 'chunk_index', 'total_chunks']
+2025-08-27 13:13:59,033 - INFO - test_retrieval - 
+Retrieval testing completed!

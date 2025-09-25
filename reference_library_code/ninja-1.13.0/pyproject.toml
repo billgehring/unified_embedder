@@ -1,0 +1,195 @@
+[build-system]
+requires = ["scikit-build-core>=0.10"]
+build-backend = "backend"
+backend-path = ["_build_backend"]
+
+[project]
+name = "ninja"
+dynamic = ["version", "readme"]
+description = "Ninja is a small build system with a focus on speed"
+authors = [
+    { name = "Jean-Christophe Fillion-Robin", email = "scikit-build@googlegroups.com" },
+    { name = "Henry Schreiner", email = "henryfs@princeton.edu" },
+]
+keywords = [
+    "build",
+    "c++",
+    "cross-compilation",
+    "cross-platform",
+    "fortran",
+    "ninja",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: C",
+    "Programming Language :: C++",
+    "Programming Language :: Fortran",
+    "Programming Language :: Python",
+    "Topic :: Software Development :: Build Tools",
+    "Typing :: Typed",
+]
+requires-python = ">=3.8"
+
+[project.urls]
+"Bug Tracker" = "https://github.com/scikit-build/ninja-python-distributions/issues"
+Documentation = "https://github.com/scikit-build/ninja-python-distributions#readme"
+Download = "https://github.com/ninja-build/ninja/releases"
+Homepage = "http://ninja-build.org/"
+"Mailing list" = "https://groups.google.com/forum/#!forum/scikit-build"
+"Source Code" = "https://github.com/scikit-build/ninja-python-distributions"
+
+[dependency-groups]
+test = [
+    "importlib_metadata>=2.0",
+    "pytest>=6.0",
+]
+dev = [{ include-group="test" }]
+
+[tool.scikit-build]
+minimum-version = "build-system.requires"
+cmake.version = "CMakeLists.txt"  # Force parsing version from CMakeLists.txt and disable fallback to '>=3.15'
+ninja.make-fallback = true
+build-dir = "build/{wheel_tag}"
+wheel.py-api = "py3"
+wheel.expand-macos-universal-tags = true
+metadata.version.provider = "scikit_build_core.metadata.setuptools_scm"
+metadata.readme.provider = "scikit_build_core.metadata.fancy_pypi_readme"
+install.components = ["python"]
+sdist.exclude = ["**/.github", "/noxfile.py", "/ninja-python-distributions-logo.png", "/docs", "/scripts", "/ninja-upstream/doc", "!/ninja-upstream/misc", "/ninja-upstream/misc/**", "!/ninja-upstream/misc/ninja_syntax.py"]
+
+
+[[tool.scikit-build.generate]]
+path = "ninja/_version.py"
+template = '''
+version = "${version}"
+'''
+
+[tool.setuptools_scm]
+
+[tool.hatch.metadata.hooks.fancy-pypi-readme]
+content-type = "text/x-rst"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
+path = "README.rst"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.fragments]]
+path = "HISTORY.rst"
+
+[[tool.hatch.metadata.hooks.fancy-pypi-readme.substitutions]]
+pattern = ".. :changelog:"
+replacement = ""
+
+
+[tool.cibuildwheel]
+archs = ["auto64", "auto32"]
+build = "cp39-*"
+build-frontend = "build[uv]"
+build-verbosity = 1
+test-groups = "test"
+test-command = "pytest {project}/tests"
+test-skip = ["*-macosx_universal2:arm64"]
+environment = { NINJA_PYTHON_DIST_ALLOW_NINJA_DEP = "1" }
+environment-pass = ["SETUPTOOLS_SCM_PRETEND_VERSION"]
+manylinux-x86_64-image = "manylinux2014"
+manylinux-i686-image = "manylinux2014"
+manylinux-aarch64-image = "manylinux2014"
+manylinux-ppc64le-image = "manylinux2014"
+manylinux-s390x-image = "manylinux2014"
+manylinux-armv7l-image = "manylinux_2_31"
+manylinux-riscv64-image = "ghcr.io/mayeut/manylinux_2_31:2025.08.02-2"
+musllinux-x86_64-image = "musllinux_1_2"
+musllinux-i686-image = "musllinux_1_2"
+musllinux-aarch64-image = "musllinux_1_2"
+musllinux-ppc64le-image = "musllinux_1_2"
+musllinux-s390x-image = "musllinux_1_2"
+musllinux-armv7l-image = "musllinux_1_2"
+musllinux-riscv64-image = "musllinux_1_2"
+
+[tool.cibuildwheel.config-settings]
+"cmake.define.RUN_NINJA_TEST" = "ON"
+
+[[tool.cibuildwheel.overrides]]
+select = "*-macos*"
+inherit.environment = "append"
+environment = { MACOSX_DEPLOYMENT_TARGET = "10.9" }
+
+[[tool.cibuildwheel.overrides]]
+select = "*-musllinux_*"
+inherit.environment = "append"
+environment = { LDFLAGS = "-static-libstdc++ -static-libgcc" }
+
+[[tool.cibuildwheel.overrides]]
+select = "*-musllinux_{ppc64le,s390x,riscv64}"
+build-frontend = "pip"  # uv not available
+inherit.test-command = "prepend"
+inherit.config-settings = "append"
+test-command = "pip check"
+
+# Doesn't account for endianness in 1.13.0 https://github.com/ninja-build/ninja/issues/2614
+[[tool.cibuildwheel.overrides]]
+select = "*_s390x"
+inherit.config-settings = "append"
+config-settings = {"cmake.define.TEST_OPTS" = "--gtest_filter=-DepsLogTest.MalformedDepsLog"}
+
+# Doesn't account for platform in 1.13.0 https://github.com/Kitware/ninja/pull/3
+[[tool.cibuildwheel.overrides]]
+select = "*-win*"
+inherit.config-settings = "append"
+config-settings = {"cmake.define.TEST_OPTS" = "--gtest_filter=-Jobserver.ParseNativeMakeFlagsValue"}
+
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = ["-ra", "--strict-markers", "--strict-config", "-v"]
+xfail_strict = true
+filterwarnings = ["error"]
+log_cli_level = "INFO"
+testpaths = [ "tests" ]
+
+
+[tool.mypy]
+warn_unused_configs = true
+files = "src"
+python_version = "3.8"
+strict = true
+enable_error_code = ["ignore-without-code", "truthy-bool", "redundant-expr"]
+warn_unreachable = true
+
+
+[tool.ruff]
+src = ["src"]
+
+[tool.ruff.lint]
+extend-select = [
+  "ARG",         # flake8-unused-arguments
+  "B",           # flake8-bugbear
+  "C4",          # flake8-comprehensions
+  "EXE",         # flake8-executable
+  "G",           # flake8-logging-format
+  "I",           # isort
+  "ICN",         # flake8-import-conventions
+  "ISC",         # flake8-implicit-str-concat
+  "NPY",         # NumPy specific rules
+  "PD",          # pandas-vet
+  "PGH",         # pygrep-hooks
+  "PIE",         # flake8-pie
+  "PL",          # pylint
+  "PT",          # flake8-pytest-style
+  "RET",         # flake8-return
+  "RUF",         # Ruff-specific
+  "SIM",         # flake8-simplify
+  "UP",          # pyupgrade
+]
+ignore = [
+  "PLR",    # Design related pylint codes
+  "E501",   # Line too long
+]
+isort.required-imports = ["from __future__ import annotations"]
+flake8-unused-arguments.ignore-variadic-names = true
+
+[tool.ruff.lint.per-file-ignores]
+"*.pyi" = ["ARG001"]

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["flit_core >=3.11,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "jeepney"
+authors = [
+    {name = "Thomas Kluyver", email = "thomas@kluyver.me.uk"},
+]
+readme = "README.rst"
+requires-python = ">=3.7"
+license = "MIT"
+license-files = ["LICENSE"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Desktop Environment"
+]
+dynamic = ["version", "description"]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-trio",
+    "pytest-asyncio >=0.17",
+    "testpath",
+    "trio",
+    "async-timeout; python_version < '3.11'",
+]
+trio = [
+    "trio",
+]
+
+[project.urls]
+Documentation = "https://jeepney.readthedocs.io/en/latest/"
+Source = "https://gitlab.com/takluyver/jeepney"
+
+[tool.flit.sdist]
+include = ["docs", "examples", "pytest.ini"]
+exclude = ["docs/_build"]

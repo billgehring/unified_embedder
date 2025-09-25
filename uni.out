@@ -1,0 +1,1 @@
+2025-05-17 15:26:53,703 - INFO - COMMAND LINE: unified_embedder.py --docs_dir /Users/wgehring/test_pdf --qdrant --qdrant_collection test_pdf --force_ocr --max_files 20 --debug

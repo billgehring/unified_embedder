@@ -1,0 +1,36 @@
+[project]
+name = "unified-embedder"
+version = "0.1.0"
+description = "Embed Canvas files to vector database"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "bs4>=0.0.2",
+    "docling>=2.48.0",
+    "docling-haystack>=0.1.1",
+    "faiss-cpu>=1.12.0",
+    "fastembed>=0.7.2",
+    "fastembed-haystack>=1.4.1",
+    "haystack-ai>=2.13.2",
+    "keyring>=25.6.0",
+    "nltk>=3.9.1",
+    "ocrmac>=1.0.0",
+    "pandas>=2.2.3",
+    "pip>=25.2",
+    "psutil>=7.0.0",
+    "pypdf2>=3.0.1",
+    "python-dotenv>=1.1.0",
+    "qdrant-client>=1.15.1",
+    "qdrant-haystack>=9.1.1",
+    "requests>=2.32.3",
+    "scikit-learn>=1.7.1",
+    "selenium>=4.32.0",
+    "sentence-transformers>=4.1.0",
+    "setuptools>=80.7.1",
+    "spacy>=3.8.4",
+    "tesserocr>=2.8.0",
+    "torch>=2.8.0",
+    "transformers>=4.55.4",
+    "webdriver-manager>=4.0.2",
+    "wheel>=0.45.1",
+]

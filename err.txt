@@ -1,0 +1,106 @@
+2025-09-14 11:04:15,947 - INFO - test_retrieval - Testing retrieval from collection: Psych240_FA2024_701917_PDF_ColBERT
+2025-09-14 11:04:15,947 - INFO - test_retrieval - Qdrant URL: http://localhost:6333
+2025-09-14 11:04:16,019 - INFO - httpx - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,023 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,023 - INFO - test_retrieval - Connected to Qdrant. Available collections: ['test_project_collection', 'ColBERT_Fixed_Test_colbert', 'ColBERT_Demo_Test', 'PSYCH240_SP2025_755719', 'ColBERT_Demo_Test_colbert', 'Psych240_FA2024_701917_PDF_ColBERT_Test', 'Fall_2024_Psych_240', 'Psych240_FA2024_701917_PDF_ColBERT_colbert', 'Psych240_FA2024_701917_PDF_ColBERT', 'COGSCI200_FA2024_699916', 'test_fixes_txt', 'Quick_ColBERT_Test', 'test_july_5', 'ColBERT_Debug_Test', 'ColBERT_Debug_Test_colbert', 'test_fixes', 'Quick_ColBERT_Test_colbert', 'test_pdf', 'Psych240_FA2024_701917', 'ColBERT_Fixed_Test', 'Psych240_FA2024_701917_ColBERT', 'Psych240_FA2024_701917_PDF_ColBERT_Test_colbert', 'Psych240_FA2024_701917_ColBERT_Test']
+2025-09-14 11:04:16,025 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917_PDF_ColBERT "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,026 - INFO - test_retrieval - Collection 'Psych240_FA2024_701917_PDF_ColBERT' info:
+2025-09-14 11:04:16,026 - INFO - test_retrieval -   - Points count: 27
+2025-09-14 11:04:16,026 - INFO - test_retrieval -   - Vectors config: {'text-dense': VectorParams(size=1024, distance=<Distance.COSINE: 'Cosine'>, hnsw_config=None, quantization_config=None, on_disk=False, datatype=None, multivector_config=None)}
+2025-09-14 11:04:16,026 - INFO - test_retrieval - 
+=== Getting 5 sample documents ===
+2025-09-14 11:04:16,030 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917_PDF_ColBERT/points/scroll "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,033 - INFO - test_retrieval - Retrieved 5 sample documents
+2025-09-14 11:04:16,033 - INFO - test_retrieval - 
+Sample 1:
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   ID: 09ccfce0-8596-56f5-9a30-f6aaf4deedc4
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   Has vectors: True
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   Content (3536 chars): STORY CONTENT
+In our earlier discussion of the trains and bird problem, we mentioned that the text is writ­ ten  such  that  it  invites  the  solver  to  f ocus on  the  motion  of the  bird  [Figure...
+2025-09-14 11:04:16,033 - INFO - test_retrieval - 
+Sample 2:
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   ID: 1736b195-8202-50b2-b73c-56b9643485ce
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   Has vectors: True
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   Content (3263 chars): HILL CLiMBINC
+Hill climbing is a  heuristic  in which, at each step,  the  solver  applies  the  operator  that yields a  new  state  that appears to be  most similar to the goal state. This heuristic...
+2025-09-14 11:04:16,033 - INFO - test_retrieval - 
+Sample 3:
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   ID: 238efcf5-c68c-569a-a424-319ad2b15814
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   Has vectors: True
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   Content (3018 chars): References
+Adams, 1. L. ( 1 979). Conceptual  bwckbusting: A  guide to better  ideas (2nd  cd.).  New  York: Norton.
+Adelson,  B. ( 1 98 . ). Problem solving and the de­ velopment  of abstract  catego...
+2025-09-14 11:04:16,033 - INFO - test_retrieval - 
+Sample 4:
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   ID: 359d8041-42ea-5fc9-8ff2-9a13560d1aa6
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   Has vectors: True
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   Content (3170 chars): References
+Ohlsson,  S. (1984b). Restructuring  revisited II. An  inf ormation  processing  theory  of restruc­ turing and insight. Scandinavian lountal 0 /  Psy­ chology, 2 5 ,  1 1 7-129.
+Ormerod, T...
+2025-09-14 11:04:16,033 - INFO - test_retrieval - 
+Sample 5:
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   ID: 451d42f5-4911-59d5-8533-e1229ce5e280
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   Has vectors: True
+2025-09-14 11:04:16,033 - INFO - test_retrieval -   Content (841 chars): Introduction
+problem representation. Fourth, we consider the interplay between constructing a repre­ sentation and generating a solution. Finally, we draw some conclusions and consider di­ rections fo...
+2025-09-14 11:04:16,033 - INFO - test_retrieval - 
+=== Testing ColBERT Token Retrieval ===
+2025-09-14 11:04:16,033 - INFO - test_retrieval - Query: 'What is the trains-meeting problem?'
+2025-09-14 11:04:16,033 - INFO - test_retrieval - ColBERT model: colbert-ir/colbertv2.0
+2025-09-14 11:04:16,033 - INFO - test_retrieval - Search mode: multi-vector
+2025-09-14 11:04:16,033 - INFO - hybrid_qdrant_store - Initializing Haystack QdrantDocumentStore: Psych240_FA2024_701917_PDF_ColBERT
+2025-09-14 11:04:16,066 - INFO - httpx - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,067 - INFO - hybrid_qdrant_store - Initializing native QdrantClient for ColBERT: Psych240_FA2024_701917_PDF_ColBERT_colbert
+2025-09-14 11:04:16,100 - INFO - httpx - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,107 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,107 - INFO - hybrid_qdrant_store - ColBERT collection Psych240_FA2024_701917_PDF_ColBERT_colbert already exists
+2025-09-14 11:04:16,113 - INFO - colbert_token_embedder - Loading ColBERT model: colbert-ir/colbertv2.0
+2025-09-14 11:04:16,159 - INFO - httpx - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,159 - INFO - httpx - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,160 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917_PDF_ColBERT/exists "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,160 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917_PDF_ColBERT/exists "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,163 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917_PDF_ColBERT "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,163 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917_PDF_ColBERT "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,170 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917_PDF_ColBERT/points/scroll "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,170 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917_PDF_ColBERT/points/scroll "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,749 - INFO - colbert_token_embedder - ColBERT model loaded in 0.64s
+2025-09-14 11:04:16,749 - INFO - colbert_token_embedder - Model info: 128 dims, 0.44GB
+2025-09-14 11:04:16,776 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917_PDF_ColBERT_colbert/points/query "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,780 - ERROR - multi_vector_retrieval - Multi-vector search failed: 3 (of 3) futures unfinished
+2025-09-14 11:04:16,781 - INFO - test_retrieval - 
+📊 Performance Stats:
+2025-09-14 11:04:16,781 - INFO - test_retrieval -   Search time: 673.7ms
+2025-09-14 11:04:16,781 - INFO - test_retrieval -   Average response time: 0.0ms
+2025-09-14 11:04:16,781 - INFO - test_retrieval -   Cache hit rate: 0.0%
+2025-09-14 11:04:16,781 - INFO - test_retrieval -   Query classification: factual
+2025-09-14 11:04:16,781 - WARNING - test_retrieval - No search results found
+2025-09-14 11:04:16,781 - INFO - test_retrieval - 
+=== Testing Haystack document store ===
+2025-09-14 11:04:16,815 - INFO - httpx - HTTP Request: GET http://localhost:6333 "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,817 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917_PDF_ColBERT/exists "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,819 - INFO - httpx - HTTP Request: GET http://localhost:6333/collections/Psych240_FA2024_701917_PDF_ColBERT "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,823 - INFO - httpx - HTTP Request: POST http://localhost:6333/collections/Psych240_FA2024_701917_PDF_ColBERT/points/scroll "HTTP/1.1 200 OK"
+2025-09-14 11:04:16,834 - INFO - test_retrieval - Total documents in store: 27
+2025-09-14 11:04:16,834 - INFO - test_retrieval - Sample doc 1:
+2025-09-14 11:04:16,834 - INFO - test_retrieval -   Content: STORY CONTENT
+In our earlier discussion of the trains and bird problem, we mentioned that the text i...
+2025-09-14 11:04:16,835 - INFO - test_retrieval -   Meta keys: ['id', 'uuid', 'folder_id', 'display_name', 'filename', 'upload_status', 'content-type', 'url', 'size', 'size_date', 'created_at', 'created_at_date', 'updated_at', 'updated_at_date', 'unlock_at', 'locked', 'hidden', 'lock_at', 'hidden_for_user', 'thumbnail_url', 'modified_at', 'modified_at_date', 'mime_class', 'media_entry_id', 'category', 'locked_for_user', 'visibility_level', 'downloaded_at', 'original_url', 'dl_meta', 'ocr_quality_checked', 'ocr_reprocessed', 'ocr_engine_used', 'file_path', 'chunker', 'path']
+2025-09-14 11:04:16,835 - INFO - test_retrieval - Sample doc 2:
+2025-09-14 11:04:16,835 - INFO - test_retrieval -   Content: HILL CLiMBINC
+Hill climbing is a  heuristic  in which, at each step,  the  solver  applies  the  ope...
+2025-09-14 11:04:16,835 - INFO - test_retrieval -   Meta keys: ['id', 'uuid', 'folder_id', 'display_name', 'filename', 'upload_status', 'content-type', 'url', 'size', 'size_date', 'created_at', 'created_at_date', 'updated_at', 'updated_at_date', 'unlock_at', 'locked', 'hidden', 'lock_at', 'hidden_for_user', 'thumbnail_url', 'modified_at', 'modified_at_date', 'mime_class', 'media_entry_id', 'category', 'locked_for_user', 'visibility_level', 'downloaded_at', 'original_url', 'dl_meta', 'ocr_quality_checked', 'ocr_reprocessed', 'ocr_engine_used', 'file_path', 'chunker', 'path']
+2025-09-14 11:04:16,835 - INFO - test_retrieval - Sample doc 3:
+2025-09-14 11:04:16,835 - INFO - test_retrieval -   Content: References
+Adams, 1. L. ( 1 979). Conceptual  bwckbusting: A  guide to better  ideas (2nd  cd.).  Ne...
+2025-09-14 11:04:16,835 - INFO - test_retrieval -   Meta keys: ['id', 'uuid', 'folder_id', 'display_name', 'filename', 'upload_status', 'content-type', 'url', 'size', 'size_date', 'created_at', 'created_at_date', 'updated_at', 'updated_at_date', 'unlock_at', 'locked', 'hidden', 'lock_at', 'hidden_for_user', 'thumbnail_url', 'modified_at', 'modified_at_date', 'mime_class', 'media_entry_id', 'category', 'locked_for_user', 'visibility_level', 'downloaded_at', 'original_url', 'dl_meta', 'ocr_quality_checked', 'ocr_reprocessed', 'ocr_engine_used', 'file_path', 'chunker', 'path']
+2025-09-14 11:04:16,835 - INFO - test_retrieval - 
+📝 Wrote results to out_results.json
+2025-09-14 11:04:16,835 - INFO - test_retrieval - 
+Retrieval testing completed!
+2025-09-14 11:04:16,835 - INFO - test_retrieval - 
+💡 Tips for testing:
+2025-09-14 11:04:16,835 - INFO - test_retrieval -   • Use --multi_vector for comprehensive retrieval testing
+2025-09-14 11:04:16,835 - INFO - test_retrieval -   • Use --colbert for ColBERT-only token retrieval
+2025-09-14 11:04:16,835 - INFO - test_retrieval -   • Use --adaptive_weights for query-type adaptive scoring
+2025-09-14 11:04:16,835 - INFO - test_retrieval -   • Use --show_timing for performance analysis
+2025-09-14 11:04:16,835 - INFO - test_retrieval -   • Use --search_mode [dense|sparse|colbert] for specific vector types

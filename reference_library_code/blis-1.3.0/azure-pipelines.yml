@@ -1,0 +1,125 @@
+trigger:
+  batch: true
+  branches:
+    include:
+    - '*'
+
+jobs:
+- job: 'JSONL'
+  # Manually enable for generating JSONL
+  condition: true
+  strategy:
+    matrix:
+      Python39Mac:
+        imageName: 'macos-latest'
+        python.version: '3.9'
+      Python39Windows:
+        imageName: 'windows-latest'
+        python.version: '3.9'
+      Python39Linux:
+        imageName: 'ubuntu-22.04'
+        python.version: '3.9'
+ 
+    maxParallel: 4
+  pool:
+    vmImage: $(imageName)
+  steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(python.version)'
+      architecture: 'x64'
+
+  - script: choco install llvm
+    condition: eq( variables['Agent.OS'], 'Windows_NT')
+    displayName: 'Preinstall (Windows)'
+
+  - script: git config --global core.autocrlf false
+    displayName: 'Disable automatic crlf conversion'
+
+  - script: git submodule update --init --recursive
+    displayName: 'Update git modules'
+
+  - script: |
+      python -m pip install --upgrade pip wheel setuptools
+      pip install -r requirements.txt
+    displayName: 'Install dependencies'
+
+  - script: |
+      bash -lc "./bin/generate-make-jsonl windows x86_64 --export"
+      bash -lc "./bin/generate-make-jsonl windows generic --export"
+      bash -lc "./bin/generate-make-jsonl windows x86_64_no_zen3 --export"
+      bash -lc "./bin/generate-make-jsonl windows x86_64_no_zen2 --export"
+      bash -lc "./bin/generate-make-jsonl windows x86_64_no_skx --export"
+    condition: eq( variables['Agent.OS'], 'Windows_NT')
+    displayName: 'Generate JSONL (Windows)'
+
+  - script: |
+      bin/generate-make-jsonl darwin generic --export
+      bin/generate-make-jsonl darwin x86_64 --export
+      bin/generate-make-jsonl darwin x86_64_no_zen3 --export
+      bin/generate-make-jsonl darwin x86_64_no_zen2 --export
+      bin/generate-make-jsonl darwin x86_64_no_skx --export
+    condition: eq(variables['Agent.OS'], 'Darwin')
+    displayName: 'Generate JSONL (Mac)'
+  - script: |
+      bin/generate-make-jsonl linux generic --export
+      bin/generate-make-jsonl linux x86_64 --export
+      bin/generate-make-jsonl linux x86_64_no_zen3 --export
+      bin/generate-make-jsonl linux x86_64_no_zen2 --export
+      bin/generate-make-jsonl linux x86_64_no_skx --export
+    condition: eq(variables['Agent.OS'], 'Linux')
+    displayName: 'Generate JSONL (Linux)'
+  - script: |
+      python -m pip install --upgrade pip build wheel setuptools
+      python -m build --wheel
+    condition: eq(variables['Agent.OS'], 'Windows')
+    displayName: 'Build wheel (Windows)'
+  - publish: $(System.DefaultWorkingDirectory)/artifacts
+    artifact: '$(Agent.JobName)'
+- job: 'Wheels'
+  condition: true
+  strategy:
+    matrix:
+      Python39Mac:
+        imageName: 'macos-latest'
+        python.version: '3.9'
+      Python39Windows:
+        imageName: 'windows-latest'
+        python.version: '3.9'
+      Python39Linux:
+        imageName: 'ubuntu-22.04'
+        python.version: '3.9'
+    maxParallel: 4
+  pool:
+    vmImage: $(imageName)
+  steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(python.version)'
+      architecture: 'x64'
+  - script: git config --global core.autocrlf false
+    displayName: 'Disable automatic crlf conversion'
+  - script: |
+      call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
+      clang --version
+      # Set the correct paths and includes. Only the env variables set here are
+      # used, not the ones defined in the .jsonl.
+      set "PATH=C:\Program Files\LLVM\bin;%PATH%"
+      set "AR=llvm-ar"
+      set "AS=llvm-as"
+      set "CC=clang"
+      set RANLIB=echo
+      python -m pip install --upgrade pip build wheel setuptools
+      python -m build --wheel
+    condition: eq( variables['Agent.OS'], 'Windows_NT')
+    displayName: 'Build wheel (Windows)'
+  - script: |
+      python -m pip install --upgrade pip build wheel setuptools
+      python -m build --wheel
+    condition: eq( variables['Agent.OS'], 'Linux')
+    displayName: 'Build wheel (Linux)'
+  - script: |
+      python -m pip install --upgrade pip build wheel setuptools
+      python -m build --wheel
+    condition: eq(variables['Agent.OS'], 'Darwin')
+    displayName: 'Build wheel (Mac)'
