@@ -1,5 +1,7 @@
 # CLAUDE.md
 
+> **Note:** Planning and task management guidance now lives in `PROJECT_ROADMAP.md`, `TASK_TRACKER.md`, and `docs/DECISION_LOG.md`. Keep this file for historical context only; update new docs first when instructions change.
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository. 
 
 ## Repository Overview
